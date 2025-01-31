@@ -1,0 +1,3557 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/23/2025 1:14:39 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MAX"
+  DTS:CreatorName="MAX\MAX"
+  DTS:DTSID="{5CFEC5F8-380F-41E1-A9DD-687D45B0642C}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5397.1"
+  DTS:LocaleID="2058"
+  DTS:ObjectName="4  Dim_Description_Accidents"
+  DTS:PackageType="5"
+  DTS:VersionBuild="75"
+  DTS:VersionGUID="{E600DE95-66B7-4EB3-B841-56D43C66972D}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[MAX\MSSQLSERVER2022.DATAMART_ACCIDENTS.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{895F2DD8-1440-433D-BCD8-2C09614526DF}"
+      DTS:ObjectName="MAX\MSSQLSERVER2022.DATAMART_ACCIDENTS.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=MAX\MSSQLSERVER2022;User ID=sa;Initial Catalog=DATAMART_ACCIDENTS;Provider=SQLNCLI11.1;Application Name=SSIS-1  Dim_Location-{895F2DD8-1440-433D-BCD8-2C09614526DF}MAX\MSSQLSERVER2022.DATAMART_ACCIDENTS.sa;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAJ3YNkaA7v0erw9zfXIJgggAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACchRYyMBcQ6kNq8/bGZhJJyXxP+p1v2ep3nsthoNLNrQAAAAAOgAAAAAIAACAAAAB8wFyVeHBK0FQ+xIMY6Vu35JJMOrCi1UR4+oYQbbR5VSAAAAD35ruKxPLaXlNujDYl2gGRj+TfVSlXkqanyY1nNpFeXUAAAADQqvHDjx1x8lcZf5v6BiXQtKAfh85DSLFzXpBZk1p7nnngOMl3SX6Ivr6gHU5w1vRM7d0aiqQUJtrL9X9OJliq</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[MAX\MSSQLSERVER2022.STAGING_ACCIDENTS.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{978EBE15-714F-4488-A998-E0F936B2864A}"
+      DTS:ObjectName="MAX\MSSQLSERVER2022.STAGING_ACCIDENTS.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=MAX\MSSQLSERVER2022;User ID=sa;Initial Catalog=STAGING_ACCIDENTS;Provider=SQLNCLI11.1;Application Name=SSIS-1  Dim_Location-{978EBE15-714F-4488-A998-E0F936B2864A}MAX\MSSQLSERVER2022.STAGING_ACCIDENTS.sa;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAJ3YNkaA7v0erw9zfXIJgggAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAqnrh5uf6XuzNKr+c6e59ys/EwCQcynVo9dJHwZx5W3gAAAAAOgAAAAAIAACAAAABflbSbce4ZA9Qo9ArZHevfkS9CC15lPlEwy812voO1HCAAAADK0WX+sTSM0jSWWDwjziW+irRJw+n3mZ3KLoVXq5BDP0AAAADwm7NE6SEsuD2oHTeEvNCDZgYfI5se/YQLQY+1fEqdQCbmdw12KZ/KsjeOK0Hk3WCkWQt/bTiyVqWRFcMyrgdL</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{D1B889D8-7D66-4144-BCD0-AD5167304A02}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="ETLCantidadRegistrosModificados">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{0AD53551-6E03-49FC-B200-06EFE640B074}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="ETLCantidadRegistrosNuevos">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Dim_Description_Accidents"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{1866F809-DF5F-4E3E-9C24-EEA8C0F1529B}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Dim_Description_Accidents"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Dim_Description_Accidents\Actualizar Registros en Dim_Description_Accidents"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="Actualizar Registros en Dim_Description_Accidents"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE DT
+SET DT.Description = ST.Description
+FROM [DATAMART_ACCIDENTS].[dbo].[Dim_Description_Accidents] AS DT
+JOIN
+	[STAGING_ACCIDENTS].[dbo].[S_ACCIDENTS] AS ST
+	ON DT.Description_Accidents_Codigo = ST.Id_Staging
+WHERE DT.Description_Accidents_Key = ?
+</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Dim_Description_Accidents\Actualizar Registros en Dim_Description_Accidents.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[MAX\MSSQLSERVER2022.DATAMART_ACCIDENTS.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[MAX\MSSQLSERVER2022.DATAMART_ACCIDENTS.sa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Dim_Description_Accidents\Actualizar Registros en Dim_Description_Accidents.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dim_Description_Accidents\Actualizar Registros en Dim_Description_Accidents.Inputs[OLE DB Command Input].Columns[Description_Accidents_Key]"
+                      cachedDataType="i4"
+                      cachedName="Description_Accidents_Key"
+                      externalMetadataColumnId="Package\Dim_Description_Accidents\Actualizar Registros en Dim_Description_Accidents.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Dim_Description_Accidents\Merge Join.Outputs[Merge Join Output].Columns[Description_Accidents_Key]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Dim_Description_Accidents\Actualizar Registros en Dim_Description_Accidents.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      dataType="i4"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Dim_Description_Accidents\Actualizar Registros en Dim_Description_Accidents.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\Dim_Description_Accidents\Actualizar Registros en Dim_Description_Accidents.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Dim_Description_Accidents\Actualizar Registros en Dim_Description_Accidents.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\Dim_Description_Accidents\Actualizar Registros en Dim_Description_Accidents.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim_Description_Accidents\Actualizar Registros en Dim_Description_Accidents.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dim_Description_Accidents\Actualizar Registros en Dim_Description_Accidents.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dim_Description_Accidents\Actualizar Registros en Dim_Description_Accidents.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dim_Description_Accidents\Actualizar Registros en Dim_Description_Accidents.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Dim_Description_Accidents\Cantidad de Registros Modificados"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+              name="Cantidad de Registros Modificados">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::ETLCantidadRegistrosModificados</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Dim_Description_Accidents\Cantidad de Registros Modificados.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Dim_Description_Accidents\Cantidad de Registros Modificados.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\Dim_Description_Accidents\Cantidad de Registros Modificados.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Dim_Description_Accidents\Cantidad de Registros Nuevos"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+              name="Cantidad de Registros Nuevos">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::ETLCantidadRegistrosNuevos</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Dim_Description_Accidents\Cantidad de Registros Nuevos.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Dim_Description_Accidents\Cantidad de Registros Nuevos.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\Dim_Description_Accidents\Cantidad de Registros Nuevos.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Dim_Description_Accidents\Datamart Dim_Description_Accidents"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Datamart Dim_Description_Accidents"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT  
+       [Description_Accidents_Key]
+      ,[Description_Accidents_Codigo]
+      ,[Description]
+  FROM [DATAMART_ACCIDENTS].[dbo].[Dim_Description_Accidents]
+ ORDER BY [Description_Accidents_Codigo]</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Dim_Description_Accidents\Datamart Dim_Description_Accidents.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[MAX\MSSQLSERVER2022.DATAMART_ACCIDENTS.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[MAX\MSSQLSERVER2022.DATAMART_ACCIDENTS.sa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Dim_Description_Accidents\Datamart Dim_Description_Accidents.Outputs[OLE DB Source Output]"
+                  isSorted="true"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim_Description_Accidents\Datamart Dim_Description_Accidents.Outputs[OLE DB Source Output].Columns[Description_Accidents_Key]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Description_Accidents\Datamart Dim_Description_Accidents.Outputs[OLE DB Source Output].ExternalColumns[Description_Accidents_Key]"
+                      lineageId="Package\Dim_Description_Accidents\Datamart Dim_Description_Accidents.Outputs[OLE DB Source Output].Columns[Description_Accidents_Key]"
+                      name="Description_Accidents_Key"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_Description_Accidents\Datamart Dim_Description_Accidents.Outputs[OLE DB Source Output].Columns[Description_Accidents_Codigo]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Description_Accidents\Datamart Dim_Description_Accidents.Outputs[OLE DB Source Output].ExternalColumns[Description_Accidents_Codigo]"
+                      lineageId="Package\Dim_Description_Accidents\Datamart Dim_Description_Accidents.Outputs[OLE DB Source Output].Columns[Description_Accidents_Codigo]"
+                      name="Description_Accidents_Codigo"
+                      sortKeyPosition="1"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_Description_Accidents\Datamart Dim_Description_Accidents.Outputs[OLE DB Source Output].Columns[Description]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Description_Accidents\Datamart Dim_Description_Accidents.Outputs[OLE DB Source Output].ExternalColumns[Description]"
+                      length="800"
+                      lineageId="Package\Dim_Description_Accidents\Datamart Dim_Description_Accidents.Outputs[OLE DB Source Output].Columns[Description]"
+                      name="Description"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Dim_Description_Accidents\Datamart Dim_Description_Accidents.Outputs[OLE DB Source Output].ExternalColumns[Description_Accidents_Key]"
+                      dataType="i4"
+                      name="Description_Accidents_Key" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Description_Accidents\Datamart Dim_Description_Accidents.Outputs[OLE DB Source Output].ExternalColumns[Description_Accidents_Codigo]"
+                      dataType="i4"
+                      name="Description_Accidents_Codigo" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Description_Accidents\Datamart Dim_Description_Accidents.Outputs[OLE DB Source Output].ExternalColumns[Description]"
+                      codePage="1252"
+                      dataType="str"
+                      length="800"
+                      name="Description" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Dim_Description_Accidents\Datamart Dim_Description_Accidents.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim_Description_Accidents\Datamart Dim_Description_Accidents.Outputs[OLE DB Source Error Output].Columns[Description_Accidents_Key]"
+                      dataType="i4"
+                      lineageId="Package\Dim_Description_Accidents\Datamart Dim_Description_Accidents.Outputs[OLE DB Source Error Output].Columns[Description_Accidents_Key]"
+                      name="Description_Accidents_Key" />
+                    <outputColumn
+                      refId="Package\Dim_Description_Accidents\Datamart Dim_Description_Accidents.Outputs[OLE DB Source Error Output].Columns[Description_Accidents_Codigo]"
+                      dataType="i4"
+                      lineageId="Package\Dim_Description_Accidents\Datamart Dim_Description_Accidents.Outputs[OLE DB Source Error Output].Columns[Description_Accidents_Codigo]"
+                      name="Description_Accidents_Codigo" />
+                    <outputColumn
+                      refId="Package\Dim_Description_Accidents\Datamart Dim_Description_Accidents.Outputs[OLE DB Source Error Output].Columns[Description]"
+                      codePage="1252"
+                      dataType="str"
+                      length="800"
+                      lineageId="Package\Dim_Description_Accidents\Datamart Dim_Description_Accidents.Outputs[OLE DB Source Error Output].Columns[Description]"
+                      name="Description" />
+                    <outputColumn
+                      refId="Package\Dim_Description_Accidents\Datamart Dim_Description_Accidents.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dim_Description_Accidents\Datamart Dim_Description_Accidents.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dim_Description_Accidents\Datamart Dim_Description_Accidents.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dim_Description_Accidents\Datamart Dim_Description_Accidents.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Dim_Description_Accidents\DataMart MD5"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Incluye y ejecuta código de scripts personalizados. Por ejemplo, se usa para aplicar una regla de negocios que limita el intervalo de valores válidos de una columna de ingresos o para sumar los valores de dos columnas y calcular el promedio de la suma.;Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;13"
+              description="Incluye y ejecuta código de scripts personalizados. Por ejemplo, se usa para aplicar una regla de negocios que limita el intervalo de valores válidos de una columna de ingresos o para sumar los valores de dos columnas y calcular el promedio de la suma."
+              name="DataMart MD5"
+              version="13">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Almacena el código fuente del componente"
+                  isArray="true"
+                  name="SourceCode"
+                  state="cdata">
+                  <arrayElements
+                    arrayElementCount="30">
+                    <arrayElement
+                      dataType="System.String"><![CDATA[My Project\Settings.Designer.vb]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA['------------------------------------------------------------------------------
+' <autogenerated>
+'     This code was generated by a tool.
+'
+'     Changes to this file may cause incorrect behavior and will be lost if
+'     the code is regenerated.
+' </autogenerated>
+'------------------------------------------------------------------------------
+
+Option Strict Off
+Option Explicit On
+
+
+
+Partial Friend NotInheritable Class MySettings
+    Inherits System.Configuration.ApplicationSettingsBase
+
+    Private Shared m_Value As MySettings
+
+    Private Shared m_SyncObject As Object = New Object
+
+    <System.Diagnostics.DebuggerNonUserCode()> _
+    Public Shared ReadOnly Property Value() As MySettings
+        Get
+            If (MySettings.m_Value Is Nothing) Then
+                System.Threading.Monitor.Enter(MySettings.m_SyncObject)
+                If (MySettings.m_Value Is Nothing) Then
+                    Try
+                        MySettings.m_Value = New MySettings
+                    Finally
+                        System.Threading.Monitor.Exit(MySettings.m_SyncObject)
+                    End Try
+                End If
+            End If
+            Return MySettings.m_Value
+        End Get
+    End Property
+End Class
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[My Project\AssemblyInfo.vb]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Imports System
+Imports System.Reflection
+Imports System.Runtime.InteropServices
+
+' General Information about an assembly is controlled through the following 
+' set of attributes. Change these attribute values to modify the information
+' associated with an assembly.
+
+' Review the values of the assembly attributes
+
+<Assembly: AssemblyTitle("SC_8884b1165721451ca0b3edf6c7df9e59")> 
+<Assembly: AssemblyDescription("")> 
+<Assembly: AssemblyCompany("")> 
+<Assembly: AssemblyProduct("SC_8884b1165721451ca0b3edf6c7df9e59")> 
+<Assembly: AssemblyCopyright("Copyright @  2025")> 
+<Assembly: AssemblyTrademark("")> 
+<Assembly: CLSCompliant(True)> 
+
+<Assembly: ComVisible(False)> 
+
+'The following GUID is for the ID of the typelib if this project is exposed to COM
+<Assembly: Guid("7fe4e516-8287-4905-be5b-9b6d5d03cf5f")> 
+
+' Version information for an assembly consists of the following four values:
+'
+'      Major Version
+'      Minor Version 
+'      Build Number
+'      Revision
+'
+' You can specify all the values or you can default the Build and Revision Numbers 
+' by using the '*' as shown below:
+' <Assembly: AssemblyVersion("1.0.*")>
+
+<Assembly: AssemblyVersion("1.0.0.0")> 
+<Assembly: AssemblyFileVersion("1.0.0.0")> 
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[ComponentWrapper.vb]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[' THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
+' Microsoft SQL Server Integration Services component wrapper
+' This module defines the base class for your component
+' THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
+
+Imports System
+Imports System.Data
+Imports Microsoft.SqlServer.Dts.Pipeline
+Imports Microsoft.SqlServer.Dts.Pipeline.Wrapper
+Imports Microsoft.SqlServer.Dts.Runtime.Wrapper
+
+<CLSCompliant(False)> _
+Public Class UserComponent
+    Inherits ScriptComponent
+
+    Public Connections As New Connections(Me)
+    Public Variables As New Variables(Me)
+
+    Public Overrides Sub ProcessInput(ByVal InputID As Integer, ByVal InputName As String, ByVal Buffer As PipelineBuffer, ByVal OutputMap As OutputNameMap)
+
+        If InputName.Equals("Entrada 0", StringComparison.Ordinal) Then
+            Entrada0_ProcessInput(New Entrada0Buffer(Buffer, GetColumnIndexes(InputID), OutputMap))
+        End If
+
+    End Sub
+
+    Public Overridable Sub Entrada0_ProcessInput(ByVal Buffer As Entrada0Buffer)
+
+        While Buffer.NextRow()
+            Entrada0_ProcessInputRow(Buffer)
+        End While
+
+    End Sub
+
+    Public Overridable Sub Entrada0_ProcessInputRow(ByVal Row As Entrada0Buffer)
+
+    End Sub
+
+End Class
+
+<CLSCompliant(False)> _
+Public Class Connections
+
+    Dim ParentComponent As ScriptComponent
+
+    <CLSCompliant(False)> _
+    Public Sub New(ByVal Component As ScriptComponent)
+        ParentComponent = Component
+    End Sub
+
+End Class
+
+<CLSCompliant(False)> _
+Public Class Variables
+
+    Dim ParentComponent As ScriptComponent
+
+    <CLSCompliant(False)> _
+    Public Sub New(ByVal Component As ScriptComponent)
+        ParentComponent = Component
+    End Sub
+
+End Class
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[main.vb]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[#Region "Help:  Introduction to the Script Component"
+' The Script Component allows you to perform virtually any operation that can be accomplished in
+' a .Net application within the context of an Integration Services data flow.
+
+' Expand the other regions which have "Help" prefixes for examples of specific ways to use
+' Integration Services features within this script component.
+#End Region
+
+#Region "Imports"
+Imports System
+Imports System.Data
+Imports System.Math
+Imports Microsoft.SqlServer.Dts.Pipeline.Wrapper
+Imports Microsoft.SqlServer.Dts.Runtime.Wrapper
+Imports Microsoft.SqlServer.Dts.Pipeline
+Imports System.Text
+Imports System.Security.Cryptography
+#End Region
+
+' This is the class to which to add your code.  Do not change the name, attributes, or parent
+' of this class.
+<Microsoft.SqlServer.Dts.Pipeline.SSISScriptComponentEntryPointAttribute> _
+<CLSCompliant(False)> _
+Public Class ScriptMain
+    Inherits UserComponent
+
+#Region "Help:  Using Integration Services variables and parameters"
+    'To use a variable in this script, first ensure that the variable has been added to
+    'either the list contained in the ReadOnlyVariables property or the list contained in
+    'the ReadWriteVariables property of this script component, according to whether or not your
+    'code needs to write into the variable.  To do so, save this script, close this instance of
+    'Visual Studio, and update the ReadOnlyVariables and ReadWriteVariables properties.
+    'To use a parameter in this script, follow the same steps. Parameters are always read-only.
+
+    'Example of reading from a variable or parameter:
+    ' startTime = Variables.MyStartTime;
+
+    'Example of writing to a variable:
+    ' Variables.myStringVariable = "new value";
+#End Region
+
+#Region "Help:  Using Integration Services Connnection Managers"
+    'Some types of connection managers can be used in this script component.  See the help topic
+    '"Working with Connection Managers Programatically" for details.
+
+    'To use a connection manager in this script, first ensure that the connection manager has
+    'been added to either the list of connection managers on the Connection Managers page of the
+    'script component editor.  To add the connection manager, save this script, close this instance of
+    ' Visual Studio, and add the Connection Manager to the list.
+
+    'If the component needs to hold a connection open while processing rows, override the
+    'AcquireConnections and ReleaseConnections methods.
+
+    'Example of using an ADO.Net connection manager to acquire a SqlConnection:
+    ' Dim rawConnection As Object = Connections.SalesDB.AcquireConnection(Transaction)
+    ' Dim salesDBConn As SqlConnection = CType(rawConnection, SqlConnection)
+
+    'Example of using a File connection manager to acquire a file path:
+    ' Dim rawConnection As Object = Connections.Prices_zip.AcquireConnection(Transaction)
+    ' Dim filePath As String = CType(rawConnection, String)
+
+    'Example of releasing a connection manager:
+    ' Connections.SalesDB.ReleaseConnection(rawConnection)
+#End Region
+
+#Region "Help:  Firing Integration Services Events"
+    'This script component can fire events.
+
+    'Example of firing an error event:
+    ' ComponentMetaData.FireError(10, "Process Values", "Bad value", "", 0, cancel)
+
+    'Example of firing an information event:
+    ' ComponentMetaData.FireInformation(10, "Process Values", "Processing has started", "", 0, fireAgain)
+
+    'Example of firing a warning event:
+    ' ComponentMetaData.FireWarning(10, "Process Values", "No rows were received", "", 0)
+
+#End Region
+
+    'This method is called once, before rows begin to be processed in the data flow.
+    '
+    'You can remove this method if you don't need to do anything here.
+    Public Overrides Sub PreExecute()
+        MyBase.PreExecute()
+        '
+        ' Add your code here
+        '
+    End Sub
+
+    ' This method is called after all the rows have passed through this component.
+    '
+    ' You can delete this method if you don't need to do anything here.
+    Public Overrides Sub PostExecute()
+        MyBase.PostExecute()
+        '
+        ' Add your code here
+        '
+    End Sub
+
+    'This method is called once for every row that passes through the component from Entrada0.
+    '
+    'Example of reading a value from a column in the the row:
+    ' zipCode = Row.ZipCode
+    '
+    'Example of writing a value to a column in the row:
+    ' Row.ZipCode = zipCode
+    Private inputBuffer As PipelineBuffer
+
+    Public Overrides Sub ProcessInput(ByVal InputID As Integer, ByVal Buffer As Microsoft.SqlServer.Dts.Pipeline.PipelineBuffer)
+
+        inputBuffer = Buffer
+
+        MyBase.ProcessInput(InputID, Buffer)
+
+    End Sub
+
+    Public Shared Function CreateHash(ByVal data As String) As String
+        Dim dataToHash As Byte() = (New UnicodeEncoding()).GetBytes(data)
+        Dim md5 As MD5 = New MD5CryptoServiceProvider()
+        Dim hashedData As Byte() = md5.ComputeHash(dataToHash)
+        RNGCryptoServiceProvider.Create().GetBytes(dataToHash)
+        Dim s As String = Convert.ToBase64String(hashedData, Base64FormattingOptions.None)
+        Return s
+    End Function
+    Public Overrides Sub Entrada0_ProcessInputRow(ByVal Row As Entrada0Buffer)
+        Dim counter As Integer = 0
+        Dim values As New StringBuilder
+        For counter = 0 To inputBuffer.ColumnCount - 1
+            Dim value As Object
+            value = inputBuffer.Item(counter)
+            values.Append(value)
+        Next
+
+        'CAMBIAR EL VALOR VariableSalida A SU COLUMNA DE SALIDA
+        Row.DataMartMD5 = CreateHash(values.ToString())
+    End Sub
+
+End Class
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[My Project\Settings.settings]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)" GeneratedClassNamespace="" GeneratedClassName="MySettings">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[SC_8884b1165721451ca0b3edf6c7df9e59.vbproj]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BF780F6E-0BB7-4D54-B07E-B9CB91626A51}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>My Project</AppDesignerFolder>
+    <RootNamespace>SC_8884b1165721451ca0b3edf6c7df9e59</RootNamespace>
+    <AssemblyName>SC_8884b1165721451ca0b3edf6c7df9e59</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <!-- This sections specifies references for the project. -->
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.SqlServer.TxScript, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.DTSRuntimeWrap, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.DTSPipelineWrap, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.PipelineHost, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Compile Include="main.vb" />
+    <Compile Include="BufferWrapper.vb" />
+    <Compile Include="ComponentWrapper.vb" />
+  </ItemGroup>
+  <!-- Visual Basic supports Importing namespaces (equivalent to using statements in C#).-->
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="My Project\" />
+    <Compile Include="My Project\AssemblyInfo.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <!-- Include the build rules for a VB project.-->
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- This section defines VSTA properties that describe the host-changable project properties. -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}">
+        <ProjectProperties HostName="VSTAHostName" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="vb" TemplatesPath="" />
+        <Host Name="SSIS_SC160" />
+        <ProjectClient>
+          <HostIdentifier>SSIS_SC160</HostIdentifier>
+        </ProjectClient>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[BufferWrapper.vb]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[' THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
+' Microsoft SQL Server Integration Services buffer wrappers
+' This module defines classes for accessing data flow buffers
+' THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
+
+
+Option Strict Off   ' This allows usage of PipelineBuffer typed accessors.
+
+Imports System
+Imports System.Data
+Imports Microsoft.SqlServer.Dts.Pipeline
+Imports Microsoft.SqlServer.Dts.Pipeline.Wrapper
+
+<CLSCompliant(False)> _
+Public Class Entrada0Buffer
+    Inherits ScriptBuffer
+
+    Public Sub New(ByVal Buffer As PipelineBuffer, ByVal BufferColumnIndexes As Integer(), ByVal OutputMap As OutputNameMap)
+        MyBase.New(Buffer, BufferColumnIndexes, OutputMap)
+    End Sub
+
+    Public ReadOnly Property [DescriptionAccidentsCodigo]() As Int32
+        Get
+            Return Buffer.GetInt32(Me.BufferColumnIndexes(0))
+        End Get
+    End Property
+    Public ReadOnly Property [DescriptionAccidentsCodigo_IsNull] As Boolean
+        Get
+            Return IsNull(0)
+        End Get
+    End Property
+
+    Public ReadOnly Property [Description]() As String
+        Get
+            Return Buffer.GetString(Me.BufferColumnIndexes(1))
+        End Get
+    End Property
+    Public ReadOnly Property [Description_IsNull] As Boolean
+        Get
+            Return IsNull(1)
+        End Get
+    End Property
+
+    Public WriteOnly Property [DataMartMD5]() As String
+        Set
+            Me(2) = Value
+        End Set
+    End Property
+    Public WriteOnly Property [DataMartMD5_IsNull] As Boolean
+        Set
+            If (value)
+                SetNull(2)
+            Else
+                Throw new InvalidOperationException("La propiedad IsNull no puede establecerse en False. En su lugar, asigne un valor a la columna.")
+            End If
+        End Set
+    End Property
+
+    Public Overloads Function NextRow() As Boolean
+        NextRow = MyBase.NextRow()
+    End Function
+
+    Public Overloads Function EndOfRowset() As Boolean
+        EndOfRowset = MyBase.EndOfRowset
+    End Function
+
+End Class
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Project]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF16LE]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="3.0" schemaVersion="1.0">
+  <msb:PropertyGroup>
+    <msb:Language>msBuild</msb:Language>
+    <msb:CodeName>SC_8884b1165721451ca0b3edf6c7df9e59</msb:CodeName>
+    <msb:DisplayName>SC_8884b1165721451ca0b3edf6c7df9e59</msb:DisplayName>
+    <msb:ProjectId>{172AECCE-14C1-43F0-A975-DD8984BDDDB7}</msb:ProjectId>
+  </msb:PropertyGroup>
+  <msb:ItemGroup>
+    <msb:Project Include="SC_8884b1165721451ca0b3edf6c7df9e59.vbproj" />
+    <msb:File Include="My Project\AssemblyInfo.vb" />
+    <msb:File Include="My Project\Resources.resx" />
+    <msb:File Include="My Project\Resources.Designer.vb" />
+    <msb:File Include="My Project\Settings.settings" />
+    <msb:File Include="My Project\Settings.Designer.vb" />
+    <msb:File Include="main.vb" />
+    <msb:File Include="BufferWrapper.vb" />
+    <msb:File Include="ComponentWrapper.vb" />
+  </msb:ItemGroup>
+</c:Project>]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[My Project\Resources.resx]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+</root>]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[My Project\Resources.Designer.vb]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA['------------------------------------------------------------------------------
+' <autogenerated>
+'     This code was generated by a tool.
+'
+'     Changes to this file may cause incorrect behavior and will be lost if
+'     the code is regenerated.
+' </autogenerated>
+'------------------------------------------------------------------------------
+
+Option Strict Off
+Option Explicit On
+
+
+Namespace My.Resources
+    
+    '''<summary>
+    '''   A strongly-typed resource class, for looking up localized strings, etc.
+    '''</summary>
+    'This class was auto-generated by the Strongly Typed Resource Builder
+    'class via a tool like ResGen or Visual Studio.NET.
+    'To add or remove a member, edit your .ResX file then rerun ResGen
+    'with the /str option, or rebuild your VS project.
+    Class MyResources
+        
+        Private Shared _resMgr As System.Resources.ResourceManager
+        
+        Private Shared _resCulture As System.Globalization.CultureInfo
+        
+        Friend Sub New()
+            MyBase.New
+        End Sub
+        
+        '''<summary>
+        '''   Returns the cached ResourceManager instance used by this class.
+        '''</summary>
+        <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
+        Public Shared ReadOnly Property ResourceManager() As System.Resources.ResourceManager
+            Get
+                If (_resMgr Is Nothing) Then
+                    Dim temp As System.Resources.ResourceManager = New System.Resources.ResourceManager("My.Resources.MyResources", GetType(MyResources).Assembly)
+                    _resMgr = temp
+                End If
+                Return _resMgr
+            End Get
+        End Property
+        
+        '''<summary>
+        '''   Overrides the current thread's CurrentUICulture property for all
+        '''   resource lookups using this strongly typed resource class.
+        '''</summary>
+        <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
+        Public Shared Property Culture() As System.Globalization.CultureInfo
+            Get
+                Return _resCulture
+            End Get
+            Set
+                _resCulture = value
+            End Set
+        End Property
+    End Class
+End Namespace
+]]></arrayElement>
+                  </arrayElements>
+                </property>
+                <property
+                  dataType="System.String"
+                  description="Almacena la representación binaria del componente"
+                  isArray="true"
+                  name="BinaryCode"
+                  state="cdata">
+                  <arrayElements
+                    arrayElementCount="2">
+                    <arrayElement
+                      dataType="System.String"><![CDATA[SC_8884b1165721451ca0b3edf6c7df9e59.dll]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAHwalGcAAAAAAAAAAOAAIiALAVAAACIAAAAIAAAAAAAAGkAA
+AAAgAAAAYAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACgAAAAAgAAAAAAAAMAYIUAABAA
+ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAMg/AABPAAAAAGAAAEgEAAAAAAAAAAAAAAAAAAAA
+AAAAAIAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAAICAAAAAgAAAAIgAAAAIA
+AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAEgEAAAAYAAAAAYAAAAkAAAAAAAAAAAAAAAAAABAAABA
+LnJlbG9jAAAMAAAAAIAAAAACAAAAKgAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAAD8
+PwAAAAAAAEgAAAACAAUA5CMAACwbAAABAAAAAAAAABA/AAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4CKBgAAAoqHgIoGQAACiqmcxoAAAqAAQAABHMbAAAKgAIA
+AARzHAAACoADAAAEcx0AAAqABAAABCoufgEAAARvHgAACioufgIAAARvHwAACioufgMAAARvIAAA
+CioufgQAAARvIQAACioeAigiAAAKKq5+BQAABC0ecgEAAHDQBQAAAigjAAAKbyQAAApzJQAACoAF
+AAAEfgUAAAQqGn4GAAAEKh4CgAYAAAQqHgIoGwAABioeAigmAAAKKh4CKCcAAAoqQgIEfQcAAAQC
+AwQoKAAACioAABMwAwApAAAAAQAAEXMpAAAKAm8qAAAKCnMrAAAKBm8sAAAKKC0AAAoGby4AAAoW
+KC8AAAoqAAAAEzACAFMAAAACAAARFgpzMAAACgsCewcAAARvMQAAChfaDBYKKyMCewcAAAQGbzIA
+AAooMwAACg0HCSgzAAAKbzQAAAomBhfWCgYIMdkDB281AAAKKBAAAAZvFwAABioqAgMEBSg2AAAK
+KlICezcAAAoCezgAAAoWlG85AAAKKiICFig6AAAKKlICezcAAAoCezgAAAoXlG87AAAKKiICFyg6
+AAAKKiYCGAMoPAAACipaAywIAhgoPQAACipyMwAAcHM+AAAKegATMAEACQAAAAMAABECKD8AAAoK
+BioAAAATMAEACQAAAAMAABECKEAAAAoKBip+AihBAAAKAgJzHwAABn0IAAAEAgJzIAAABn0JAAAE
+KpIEcvIAAHAab0IAAAosFQIFAgMoQwAACg4EcxIAAAZvHQAABipKKwcCA28eAAAGA28ZAAAGLfEq
+Bio6AigiAAAKAgN9CgAABCo6AigiAAAKAgN9CwAABCpCcyIAAAooMwAACoANAAAEKh4CKEQAAAoq
+AAAbMAEAPwAAAAAAAAB+DAAABC0yfg0AAAQoMwAACihFAAAKfgwAAAQtHHMiAAAGgAwAAATeEH4N
+AAAEKDMAAAooRgAACtx+DAAABCoAARAAAAIAHQAMKQAQAAAAADYCAygzAAAKKEcAAAoqHgIoSAAA
+Ciou0AwAAAIoIwAACioeAihJAAAKKgAAEzABABQAAAAEAAARAowFAAAbLQgoAQAAKworAgIKBioi
+A/4VBQAAGyoAAAATMAIAKAAAAAUAABECe0sAAApvTAAACgoGjAgAABstEigCAAArCgJ7SwAACgZv
+TQAACgYqSgIoIgAACgJzTgAACn1LAAAKKgBCU0pCAQABAAAAAAAMAAAAdjQuMC4zMDMxOQAAAAAF
+AGwAAAB4CgAAI34AAOQKAAA4CwAAI1N0cmluZ3MAAAAAHBYAAAgBAAAjVVMAJBcAABAAAAAjR1VJ
+RAAAADQXAAD4AwAAI0Jsb2IAAAAAAAAAAgAAAVcVogkJDwAAAPoBMwAWAAABAAAANwAAAA0AAAAO
+AAAALAAAABUAAABOAAAAPQAAAAUAAAAFAAAADgAAAA8AAAAIAAAAAQAAAAUAAAABAAAAAgAAAAMA
+AAACAAAAAAADBQEAAAAAAAYAQAO7CAYA6gO7CAYAFwL8Bw8AYQkAAAYAWAIeBgYAIwMeBgYA0QMe
+BgYAYAMeBgYAeQMeBgYAnwIeBgYAlAOZBQYARAJ1CAYAwAF1CAYA6wIeBgYAugJrBAoA4wGABwoA
+qwHtBAoAKwLtBA4AfAFLCA4AtgcPCAYA0wL8Bw4AbwKUCA4AhwKwAAYA8wmZBQ4AnAdLCA4ACAOw
+AAYAUwGZBQ4AAQDDBAoAzgGuBQYAcAfbCAYAawYJBhIAqgMvARYARAcvAQYAvgSZBQYAJwevChIA
+UwcvARIAlgYvARIAMwovAQoAjAH0BQYA+gH8BwYAAQGZBQYALgseBgYAWwSvCgYAYgSvCgYArgYN
+CwYAoAUNCwYAxwcNCwYAcAqZBQYAxgmZBQYA3gm7CAYAMAaZBQYAoASZBQYAWgaZBQYA9AdKBAYA
+3QeZBQAAAABoAAAAAAABAAEAAAAAAOYF5gpNAAEAAQAAAAAAtAfmClEAAQACAAABEAD6CeYKYQAB
+AAMAAAAAAB0J7AhhAAUACAABAAAAywVEACAABwAMAAEAAAA1B0QAkQAIABIAAQAAABUKRACZAAgA
+GwABAAAAuglEAGEACgAfAAEAAABwCUQAYQALACAAAAEQAKgJRACdAAwAIQAFAQAAPQgAAGEADgAk
+AAUBAAAQAAAAYQAOACsAMQDwBlcBMQDHBl8BMQDbBmcBMQAJB28BEQC/B3cBEQBwAXsBAQBgB8IA
+BgC6CX8BBgBwCYMBAQAjCocBAQAjCocBEQAfBIwBEQDtCZABIQC7Ch8BUCAAAAAABhjnBwYAAQBY
+IAAAAAAGGOcHBgABAGAgAAAAABEY7QeTAQEAiiAAAAAAEwinB5cBAQCWIAAAAAATCNYFnAEBAKIg
+AAAAABMImAehAQEAriAAAAAAEwgtCKYBAQC6IAAAAAADGOcHBgABAMIgAAAAABYIbAerAQEA7iAA
+AAAAFghYAbABAQD1IAAAAAAWCGQBtQEBAP0gAAAAAAYY5wcGAAIABSEAAAAAxgIIBAYAAgANIQAA
+AADGAhMEBgACABUhAAAAAMYCogplAAIAKCEAAAAAFgCnBLsBBABgIQAAAADGAsUKwAEFAL8hAAAA
+AAYY5we2AAYAyiEAAAAABgh3Bp0ACQDfIQAAAAAGCFkF5AAJAOghAAAAAAYISgayAAkA/SEAAAAA
+BghCBeQACQAGIgAAAAAGCDQAEAAJABAiAAAAAAYIKwUVAAoAKCIAAAAAhgDeCuQACwBAIgAAAACG
+AAQK5AALAFUiAAAAAAYY5wcGAAsAdSIAAAAAxgKiCsYBCwCaIgAAAABGA5kKwAEPAK0iAAAAAEYD
+xQrAARAAryIAAAAABhjnB9IBEQC+IgAAAAAGGOcH0gESAM0iAAAAABEY7QeTARMA3iIAAAAABhjn
+BwYAEwDoIgAAAAAWCCcE2QETAEQjAAAAAMYCswn7ABMAUiMAAAAAxgL1AJ0AFABaIwAAAACDAFAB
+3gEUAGYjAAAAAMYClASyABQAcCMAAAAAEQCPAOMBFACQIwAAAAABAHsA6wEVALogAAAAAAYY5wcG
+ABYAnCMAAAAAAwjcAEoAFgDQIwAAAAAGGOcHBgAWAAAAAQBEBAAAAQBxAAAAAgBlBwAAAQCiAAAA
+AQDiCgAAAQBlBwAAAgCDCQAAAwCkBgAAAQBEBAAAAQBEBAAAAQBxAAAAAgAlAQAAAwBlBwAABACk
+BgAAAQBlBwAAAQDiCgAAAQA5CgAAAQA5CgAAAQCUBgAAAQDsAAAAAQDsAAkA5wcBABEA5wcGABkA
+5wcKACkA5wcQADEA5wcQADkA5wcQAEEA5wcQAEkA5wcQAFEA5wcQAFkA5wcVAGEA5wcVAGkA5wcQ
+AHEA5wcQAHkA5wcQAIEA5wcaAJEA5wcgAKkA5wcGALEA5wcGALkA5wcGANEA5wcmAOkA5wcQAAEB
+5wcGAEEB5wcGAJkA5wcGAKEA5wcGAAwA5wcGABQA5wcGABwA5wcGACQA5wcGAAwA3ABKABQA3ABK
+ABwA3ABKACQA3ABKAMEA5wcGANkAEwFPANkAKgtXAPEA5wddADEBCAQGADEBEwQGADEBogplAFkB
+5wcGAGEBeglyAGkB5wcGAHEBsgR4AHkBpAF/AHkBegmFAIEBhQSLABkB5wcGAAkBQwqdAAkBhwWh
+AJEBOwSmABkBxgCrABkBlASyACEB5we2ACEBZQfCACEBgwnHAAkBKwDLACEBeAXQAAkBnQTVACEB
+kAXaACEBfwUBAJkB5wcQACEB3grkACEBBArkADEB5wcGAKEBswnoADEBlwnwADkB5wcGALEBoQf2
+ALEBEAr2AMEAswn7AMEA9QCdAMEAlASyALkBzQAIATQAuwofATwAJwRKADwAMQQ2ATwA5wcGACkA
+qwCyAy4ACwAnAi4AEwAwAi4AGwBPAi4AIwBYAi4AKwCBAi4AMwCBAi4AOwBYAi4AQwCHAi4ASwCB
+Ai4AUwCeAi4AWwCBAi4AYwCkAi4AawDOAi4AcwDbAkAAiwApA0AAgwAuA0MAewA3A0MAgwAuA0kA
+qwDDA2MAewA3A2MAgwAuA2kAqwDXA4AAiwApA4MAkwApA4MAmwApA4MAewA3A4kAqwDkA6AAiwAp
+A6kAgwBPAsAAiwApA8MAswApA8MAUwCBAskAgwBPAuAAiwApA+MAUwCBAgMBUwCBAiMBUwCBAkMB
+UwCBAoMBgwAuA4MBowBQA6MBgwAuA6MBWwCBAqkBuwApA+ADUwCBAgAEUwCBAoAEgwAuA4AEiwAp
+A6AEgwAuA6AEiwApA8AEgwAuA8AEiwApA+AEgwAuA+AEiwApAwAFiwApAyAFiwApA0AFiwApA0AF
+gwAuA2AFiwApA4AFiwApA4AFgwAuA20AlADgAAABEwEEAAEABQAFAAcABwALAA0ADQAOAAAAtgfz
+AQAA6AX4AQAAnAf9AQAAPwgCAgAAcAcHAgAAdAEMAgAAewYRAgAAXQUVAgAATgYZAgAARgUVAgAA
+OAAZAgAALwUVAgAARAQdAgAA4AAiAgIABAADAAIABQAFAAIABgAHAAIABwAJAAIACQALAAIACgAN
+AAEACwANAAIAEwAPAAIAFAARAAIAFQATAAIAFgAVAAEAFwAXAAEAGAAZAAIAIwAbAAIAKwAdAC4A
+NQA8AEMABQEYAScBLgEEgAAAAQAAAAAAAAAAAAAAAABEAAAABAAAAAAAAAAAAAAAPAGnAAAAAAAE
+AAAAAAAAAAAAAAA8AZkFAAAAAAoAAAAAAAAAAAAAAEUBsAAAAAAAEAAAAAAAAAAAAAAATgFTCgAA
+AAAQAAAAAAAAAAAAAABOAXgKAAAAAAAAAAABAAAAKQkAAAwABAANAAQAAAAQABoAeQAAABAAUQB5
+AAAAAABTAHkAlQAOAZUAMQEAAAAAAENvbnRleHRWYWx1ZWAxAFRocmVhZFNhZmVPYmplY3RQcm92
+aWRlcmAxAEdldEludDMyAHNldF9EYXRhTWFydE1ENQBTQ184ODg0YjExNjU3MjE0NTFjYTBiM2Vk
+ZjZjN2RmOWU1OQA8TW9kdWxlPgBJbnB1dElEAFQARGlzcG9zZV9fSW5zdGFuY2VfXwBDcmVhdGVf
+X0luc3RhbmNlX18AZGF0YQBtc2NvcmxpYgBNaWNyb3NvZnQuVmlzdWFsQmFzaWMAQXBwZW5kAENy
+ZWF0ZUluc3RhbmNlAGdldF9HZXRJbnN0YW5jZQBpbnN0YW5jZQBHZXRIYXNoQ29kZQBSdW50aW1l
+VHlwZUhhbmRsZQBHZXRUeXBlRnJvbUhhbmRsZQBJbnB1dE5hbWUATWljcm9zb2Z0LlNxbFNlcnZl
+ci5EdHMuUGlwZWxpbmUAR2V0VHlwZQBnZXRfQ3VsdHVyZQBzZXRfQ3VsdHVyZQBfcmVzQ3VsdHVy
+ZQBBcHBsaWNhdGlvbkJhc2UAQXBwbGljYXRpb25TZXR0aW5nc0Jhc2UAQ3JlYXRlAEVkaXRvckJy
+b3dzYWJsZVN0YXRlAEd1aWRBdHRyaWJ1dGUASGVscEtleXdvcmRBdHRyaWJ1dGUAR2VuZXJhdGVk
+Q29kZUF0dHJpYnV0ZQBEZWJ1Z2dlck5vblVzZXJDb2RlQXR0cmlidXRlAERlYnVnZ2FibGVBdHRy
+aWJ1dGUARWRpdG9yQnJvd3NhYmxlQXR0cmlidXRlAENvbVZpc2libGVBdHRyaWJ1dGUAQXNzZW1i
+bHlUaXRsZUF0dHJpYnV0ZQBTdGFuZGFyZE1vZHVsZUF0dHJpYnV0ZQBIaWRlTW9kdWxlTmFtZUF0
+dHJpYnV0ZQBBc3NlbWJseVRyYWRlbWFya0F0dHJpYnV0ZQBUYXJnZXRGcmFtZXdvcmtBdHRyaWJ1
+dGUARGVidWdnZXJIaWRkZW5BdHRyaWJ1dGUAQXNzZW1ibHlGaWxlVmVyc2lvbkF0dHJpYnV0ZQBN
+eUdyb3VwQ29sbGVjdGlvbkF0dHJpYnV0ZQBBc3NlbWJseURlc2NyaXB0aW9uQXR0cmlidXRlAENv
+bXBpbGF0aW9uUmVsYXhhdGlvbnNBdHRyaWJ1dGUAQXNzZW1ibHlQcm9kdWN0QXR0cmlidXRlAEFz
+c2VtYmx5Q29weXJpZ2h0QXR0cmlidXRlAENMU0NvbXBsaWFudEF0dHJpYnV0ZQBTU0lTU2NyaXB0
+Q29tcG9uZW50RW50cnlQb2ludEF0dHJpYnV0ZQBBc3NlbWJseUNvbXBhbnlBdHRyaWJ1dGUAUnVu
+dGltZUNvbXBhdGliaWxpdHlBdHRyaWJ1dGUAUHJlRXhlY3V0ZQBQb3N0RXhlY3V0ZQBtX1ZhbHVl
+AGdldF9WYWx1ZQBzZXRfVmFsdWUAR2V0T2JqZWN0VmFsdWUAU3lzdGVtLlRocmVhZGluZwBVbmlj
+b2RlRW5jb2RpbmcAU3lzdGVtLlJ1bnRpbWUuVmVyc2lvbmluZwBUb0Jhc2U2NFN0cmluZwBUb1N0
+cmluZwBHZXRTdHJpbmcAQ3JlYXRlSGFzaABDb21wdXRlSGFzaABNYXRoAE1pY3Jvc29mdC5WaXN1
+YWxCYXNpYy5NeVNlcnZpY2VzLkludGVybmFsAFN5c3RlbS5Db21wb25lbnRNb2RlbABTQ184ODg0
+YjExNjU3MjE0NTFjYTBiM2VkZjZjN2RmOWU1OS5kbGwAc2V0X0RhdGFNYXJ0TUQ1X0lzTnVsbABn
+ZXRfRGVzY3JpcHRpb25fSXNOdWxsAGdldF9EZXNjcmlwdGlvbkFjY2lkZW50c0NvZGlnb19Jc051
+bGwAU2V0TnVsbABnZXRfSXRlbQBzZXRfSXRlbQBTeXN0ZW0ASGFzaEFsZ29yaXRobQBTeXN0ZW0u
+Q29tcG9uZW50TW9kZWwuRGVzaWduAFNjcmlwdE1haW4AZ2V0X0FwcGxpY2F0aW9uAE15QXBwbGlj
+YXRpb24AU3lzdGVtLkNvbmZpZ3VyYXRpb24AU3lzdGVtLkdsb2JhbGl6YXRpb24AU3lzdGVtLlJl
+ZmxlY3Rpb24ASW52YWxpZE9wZXJhdGlvbkV4Y2VwdGlvbgBnZXRfRGVzY3JpcHRpb24AU3RyaW5n
+Q29tcGFyaXNvbgBDdWx0dXJlSW5mbwBnZXRfRGVzY3JpcHRpb25BY2NpZGVudHNDb2RpZ28AT3V0
+cHV0TmFtZU1hcABPdXRwdXRNYXAATUQ1Q3J5cHRvU2VydmljZVByb3ZpZGVyAG1fQXBwT2JqZWN0
+UHJvdmlkZXIAbV9Vc2VyT2JqZWN0UHJvdmlkZXIAbV9Db21wdXRlck9iamVjdFByb3ZpZGVyAG1f
+TXlXZWJTZXJ2aWNlc09iamVjdFByb3ZpZGVyAFN0cmluZ0J1aWxkZXIARW50cmFkYTBCdWZmZXIA
+UGlwZWxpbmVCdWZmZXIAU2NyaXB0QnVmZmVyAGlucHV0QnVmZmVyAGdldF9SZXNvdXJjZU1hbmFn
+ZXIAU3lzdGVtLkNvZGVEb20uQ29tcGlsZXIAZ2V0X1VzZXIARW50ZXIAZ2V0X0NvbXB1dGVyAE15
+Q29tcHV0ZXIAX3Jlc01ncgBSYW5kb21OdW1iZXJHZW5lcmF0b3IAQWN0aXZhdG9yAC5jdG9yAC5j
+Y3RvcgBNb25pdG9yAFN5c3RlbS5EaWFnbm9zdGljcwBNaWNyb3NvZnQuVmlzdWFsQmFzaWMuRGV2
+aWNlcwBnZXRfV2ViU2VydmljZXMATXlXZWJTZXJ2aWNlcwBNaWNyb3NvZnQuVmlzdWFsQmFzaWMu
+QXBwbGljYXRpb25TZXJ2aWNlcwBTeXN0ZW0uUnVudGltZS5JbnRlcm9wU2VydmljZXMATWljcm9z
+b2Z0LlZpc3VhbEJhc2ljLkNvbXBpbGVyU2VydmljZXMAU3lzdGVtLlJ1bnRpbWUuQ29tcGlsZXJT
+ZXJ2aWNlcwBTeXN0ZW0uUmVzb3VyY2VzAFNDXzg4ODRiMTE2NTcyMTQ1MWNhMGIzZWRmNmM3ZGY5
+ZTU5Lk15LlJlc291cmNlcwBNeVJlc291cmNlcwBTQ184ODg0YjExNjU3MjE0NTFjYTBiM2VkZjZj
+N2RmOWU1OS5SZXNvdXJjZXMucmVzb3VyY2VzAERlYnVnZ2luZ01vZGVzAFZhcmlhYmxlcwBHZXRC
+eXRlcwBCdWZmZXJDb2x1bW5JbmRleGVzAEdldENvbHVtbkluZGV4ZXMATXlTZXR0aW5ncwBFcXVh
+bHMAQ29ubmVjdGlvbnMAQmFzZTY0Rm9ybWF0dGluZ09wdGlvbnMAUnVudGltZUhlbHBlcnMAbV9T
+eW5jT2JqZWN0AE15UHJvamVjdABFbmRPZlJvd3NldABFeGl0AFVzZXJDb21wb25lbnQAUGFyZW50
+Q29tcG9uZW50AFNjcmlwdENvbXBvbmVudABnZXRfQ29sdW1uQ291bnQATWljcm9zb2Z0LlNxbFNl
+cnZlci5UeFNjcmlwdABDb252ZXJ0AE1pY3Jvc29mdC5TcWxTZXJ2ZXIuUGlwZWxpbmVIb3N0AEVu
+dHJhZGEwX1Byb2Nlc3NJbnB1dABTeXN0ZW0uVGV4dABtX0NvbnRleHQARW50cmFkYTBfUHJvY2Vz
+c0lucHV0Um93AE5leHRSb3cAU0NfODg4NGIxMTY1NzIxNDUxY2EwYjNlZGY2YzdkZjllNTkuTXkA
+U3lzdGVtLlNlY3VyaXR5LkNyeXB0b2dyYXBoeQBnZXRfQXNzZW1ibHkAAAAxTQB5AC4AUgBlAHMA
+bwB1AHIAYwBlAHMALgBNAHkAUgBlAHMAbwB1AHIAYwBlAHMAAIC9TABhACAAcAByAG8AcABpAGUA
+ZABhAGQAIABJAHMATgB1AGwAbAAgAG4AbwAgAHAAdQBlAGQAZQAgAGUAcwB0AGEAYgBsAGUAYwBl
+AHIAcwBlACAAZQBuACAARgBhAGwAcwBlAC4AIABFAG4AIABzAHUAIABsAHUAZwBhAHIALAAgAGEA
+cwBpAGcAbgBlACAAdQBuACAAdgBhAGwAbwByACAAYQAgAGwAYQAgAGMAbwBsAHUAbQBuAGEALgAA
+E0UAbgB0AHIAYQBkAGEAIAAwAAAAAF+QVKMVRS5Nii81MQlJpUcABCABAQgDIAABBSABARERBCAB
+AQ4EIAEBAgUgAgEODgUgAQERRQcgBAEODg4OBhUSNAESDAYVEjQBEggGFRI0ARJlBhUSNAESMAQg
+ABMABwABEm0RgKUFIAASgKkHIAIBDhKAqQcgAgEIEoCFBAcBHQUFIAEdBQ4GIAEdBR0FBQAAEoC9
+BSABAR0FCAACDh0FEYDFCAcECBKAjQgcAyAACAQgARwIBAABHBwGIAESgI0cAyAADgsgAwESgIUd
+CBKAlQQGEoCFAwYdCAQgAQgIBCABAggEIAEOCAUgAgEIHAMHAQIDIAACByACAg4RgNUFIAEdCAgE
+AAEBHAQgAQIcBAcBHgACHgAFEAEAHgAECgEeAAQHARMABhUSNAETAAcGFRJxARMABhUScQETAAIT
+AAQKARMABSABARMACLd6XFYZNOCJCLA/X38R1Qo6CImEXc2AgMyRBwYVEjQBEgwHBhUSNAESCAcG
+FRI0ARJlBwYVEjQBEjADBhJ5AwYSfQMGEiQDBhIoBAYSgJkDBhIsAgYcAwAAAQQAABIMBAAAEggE
+AAASZQQAABIwBAAAEnkEAAASfQUAAQESfQQAAQ4OBSABARIcCyAEAQgOEoCFEoCVBiABARKAmQQA
+ABIsBCAAEm0HEAEBHgAeAAcwAQEBEB4ABAgAEgwECAASCAQIABJlBAgAEjAECAASeQQIABJ9AygA
+CAMoAAIDKAAOBAgAEiwEKAATAAgBAAgAAAAAAB4BAAEAVAIWV3JhcE5vbkV4Y2VwdGlvblRocm93
+cwEIAQACAAAAAAAoAQAjU0NfODg4NGIxMTY1NzIxNDUxY2EwYjNlZGY2YzdkZjllNTkAAAUBAAAA
+ABYBABFDb3B5cmlnaHQgQCAgMjAyNQAABQEAAQAAKQEAJDdmZTRlNTE2LTgyODctNDkwNS1iZTVi
+LTliNmQ1ZDAzY2Y1ZgAADAEABzEuMC4wLjAAAE0BABwuTkVURnJhbWV3b3JrLFZlcnNpb249djQu
+Ny4yAQBUDhRGcmFtZXdvcmtEaXNwbGF5TmFtZRQuTkVUIEZyYW1ld29yayA0LjcuMgQBAAAACAEA
+AQAAAAAAGAEACk15VGVtcGxhdGUIMTEuMC4wLjAAAGEBADRTeXN0ZW0uV2ViLlNlcnZpY2VzLlBy
+b3RvY29scy5Tb2FwSHR0cENsaWVudFByb3RvY29sEkNyZWF0ZV9fSW5zdGFuY2VfXxNEaXNwb3Nl
+X19JbnN0YW5jZV9fAAAAEAEAC015LkNvbXB1dGVyAAATAQAOTXkuQXBwbGljYXRpb24AAAwBAAdN
+eS5Vc2VyAAATAQAOTXkuV2ViU2VydmljZXMAALQAAADOyu++AQAAAJEAAABsU3lzdGVtLlJlc291
+cmNlcy5SZXNvdXJjZVJlYWRlciwgbXNjb3JsaWIsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1u
+ZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5I1N5c3RlbS5SZXNvdXJjZXMu
+UnVudGltZVJlc291cmNlU2V0AgAAAAAAAAAAAAAAUEFEUEFEULQAAADwPwAAAAAAAAAAAAAKQAAA
+ACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/D8AAAAAAAAAAAAAAABfQ29yRGxsTWFpbgBtc2NvcmVl
+LmRsbAAAAAAA/yUAIAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABABAA
+AAAYAACAAAAAAAAAAAAAAAAAAAABAAEAAAAwAACAAAAAAAAAAAAAAAAAAAABAAAAAABIAAAAWGAA
+AOwDAAAAAAAAAAAAAOwDNAAAAFYAUwBfAFYARQBSAFMASQBPAE4AXwBJAE4ARgBPAAAAAAC9BO/+
+AAABAAAAAQAAAAAAAAABAAAAAAA/AAAAAAAAAAQAAAACAAAAAAAAAAAAAAAAAAAARAAAAAEAVgBh
+AHIARgBpAGwAZQBJAG4AZgBvAAAAAAAkAAQAAABUAHIAYQBuAHMAbABhAHQAaQBvAG4AAAAAAAAA
+sARMAwAAAQBTAHQAcgBpAG4AZwBGAGkAbABlAEkAbgBmAG8AAAAoAwAAAQAwADAAMAAwADAANABi
+ADAAAAAaAAEAAQBDAG8AbQBtAGUAbgB0AHMAAAAAAAAAIgABAAEAQwBvAG0AcABhAG4AeQBOAGEA
+bQBlAAAAAAAAAAAAcAAkAAEARgBpAGwAZQBEAGUAcwBjAHIAaQBwAHQAaQBvAG4AAAAAAFMAQwBf
+ADgAOAA4ADQAYgAxADEANgA1ADcAMgAxADQANQAxAGMAYQAwAGIAMwBlAGQAZgA2AGMANwBkAGYA
+OQBlADUAOQAAADAACAABAEYAaQBsAGUAVgBlAHIAcwBpAG8AbgAAAAAAMQAuADAALgAwAC4AMAAA
+AHAAKAABAEkAbgB0AGUAcgBuAGEAbABOAGEAbQBlAAAAUwBDAF8AOAA4ADgANABiADEAMQA2ADUA
+NwAyADEANAA1ADEAYwBhADAAYgAzAGUAZABmADYAYwA3AGQAZgA5AGUANQA5AC4AZABsAGwAAABI
+ABIAAQBMAGUAZwBhAGwAQwBvAHAAeQByAGkAZwBoAHQAAABDAG8AcAB5AHIAaQBnAGgAdAAgAEAA
+IAAgADIAMAAyADUAAAAqAAEAAQBMAGUAZwBhAGwAVAByAGEAZABlAG0AYQByAGsAcwAAAAAAAAAA
+AHgAKAABAE8AcgBpAGcAaQBuAGEAbABGAGkAbABlAG4AYQBtAGUAAABTAEMAXwA4ADgAOAA0AGIA
+MQAxADYANQA3ADIAMQA0ADUAMQBjAGEAMABiADMAZQBkAGYANgBjADcAZABmADkAZQA1ADkALgBk
+AGwAbAAAAGgAJAABAFAAcgBvAGQAdQBjAHQATgBhAG0AZQAAAAAAUwBDAF8AOAA4ADgANABiADEA
+MQA2ADUANwAyADEANAA1ADEAYwBhADAAYgAzAGUAZABmADYAYwA3AGQAZgA5AGUANQA5AAAANAAI
+AAEAUAByAG8AZAB1AGMAdABWAGUAcgBzAGkAbwBuAAAAMQAuADAALgAwAC4AMAAAADgACAABAEEA
+cwBzAGUAbQBiAGwAeQAgAFYAZQByAHMAaQBvAG4AAAAxAC4AMAAuADAALgAwAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAwAAAAcMAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
+                  </arrayElements>
+                </property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del proyecto de Microsoft Visual Studio Tools para Aplicaciones. Los nombres de proyecto deben ser únicos en el paquete."
+                  name="VSTAProjectName"
+                  typeConverter="NOTBROWSABLE">SC_8884b1165721451ca0b3edf6c7df9e59</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el lenguaje de programación que utiliza el script."
+                  name="ScriptLanguage"
+                  typeConverter="Microsoft.SqlServer.VSTAHosting.ScriptingLanguages">VisualBasic</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica una lista separada por comas de variables de solo lectura."
+                  name="ReadOnlyVariables"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ScriptUIVariablePickerDlg"></property>
+                <property
+                  dataType="System.String"
+                  description="Especifica una lista separada por comas de variables de lectura/escritura."
+                  name="ReadWriteVariables"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ScriptUIWriteableVariablePickerDlg"></property>
+                <property
+                  dataType="System.String"
+                  description="Lista de puntos de interrupción presentes en el script."
+                  isArray="true"
+                  name="BreakpointCollection"
+                  typeConverter="NOTBROWSABLE">
+                  <arrayElements
+                    arrayElementCount="0" />
+                </property>
+                <property
+                  dataType="System.String"
+                  description="Suma de comprobación para comparar los metadatos del componente con los códigos compilados."
+                  name="MetadataChecksum140"
+                  typeConverter="NOTBROWSABLE">17</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ScriptComponentHost</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Dim_Description_Accidents\DataMart MD5.Inputs[Entrada 0]"
+                  hasSideEffects="true"
+                  name="Entrada 0">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dim_Description_Accidents\DataMart MD5.Inputs[Entrada 0].Columns[Description_Accidents_Codigo]"
+                      cachedDataType="i4"
+                      cachedName="Description_Accidents_Codigo"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Dim_Description_Accidents\Datamart Dim_Description_Accidents.Outputs[OLE DB Source Output].Columns[Description_Accidents_Codigo]" />
+                    <inputColumn
+                      refId="Package\Dim_Description_Accidents\DataMart MD5.Inputs[Entrada 0].Columns[Description]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="800"
+                      cachedName="Description"
+                      lineageId="Package\Dim_Description_Accidents\Datamart Dim_Description_Accidents.Outputs[OLE DB Source Output].Columns[Description]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Dim_Description_Accidents\DataMart MD5.Outputs[Salida 0]"
+                  name="Salida 0"
+                  synchronousInputId="Package\Dim_Description_Accidents\DataMart MD5.Inputs[Entrada 0]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim_Description_Accidents\DataMart MD5.Outputs[Salida 0].Columns[DataMartMD5]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Dim_Description_Accidents\DataMart MD5.Outputs[Salida 0].Columns[DataMartMD5]"
+                      name="DataMartMD5" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Dim_Description_Accidents\Description Nuevas o Modificadas"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Description Nuevas o Modificadas"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Dim_Description_Accidents\Description Nuevas o Modificadas.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dim_Description_Accidents\Description Nuevas o Modificadas.Inputs[Conditional Split Input].Columns[StageMD5]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="StageMD5"
+                      lineageId="Package\Dim_Description_Accidents\Merge Join.Outputs[Merge Join Output].Columns[StageMD5]" />
+                    <inputColumn
+                      refId="Package\Dim_Description_Accidents\Description Nuevas o Modificadas.Inputs[Conditional Split Input].Columns[DataMartMD5]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="DataMartMD5"
+                      lineageId="Package\Dim_Description_Accidents\Merge Join.Outputs[Merge Join Output].Columns[DataMartMD5]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Dim_Description_Accidents\Description Nuevas o Modificadas.Outputs[Desciptions Nuevas]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Desciptions Nuevas"
+                  synchronousInputId="Package\Dim_Description_Accidents\Description Nuevas o Modificadas.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">[ISNULL](#{Package\Dim_Description_Accidents\Merge Join.Outputs[Merge Join Output].Columns[DataMartMD5]})</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">ISNULL(DataMartMD5)</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Dim_Description_Accidents\Description Nuevas o Modificadas.Outputs[Descriptions Modificadas]"
+                  description="Output 2 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Descriptions Modificadas"
+                  synchronousInputId="Package\Dim_Description_Accidents\Description Nuevas o Modificadas.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">#{Package\Dim_Description_Accidents\Merge Join.Outputs[Merge Join Output].Columns[StageMD5]} != #{Package\Dim_Description_Accidents\Merge Join.Outputs[Merge Join Output].Columns[DataMartMD5]}</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">StageMD5 != DataMartMD5</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">1</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Dim_Description_Accidents\Description Nuevas o Modificadas.Outputs[Conditional Split Default Output]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Conditional Split Default Output"
+                  synchronousInputId="Package\Dim_Description_Accidents\Description Nuevas o Modificadas.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Dim_Description_Accidents\Description Nuevas o Modificadas.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\Dim_Description_Accidents\Description Nuevas o Modificadas.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim_Description_Accidents\Description Nuevas o Modificadas.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dim_Description_Accidents\Description Nuevas o Modificadas.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dim_Description_Accidents\Description Nuevas o Modificadas.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dim_Description_Accidents\Description Nuevas o Modificadas.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Dim_Description_Accidents\Destino Dim_Description_Accidents"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Destino Dim_Description_Accidents"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Dim_Description_Accidents]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Dim_Description_Accidents\Destino Dim_Description_Accidents.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[MAX\MSSQLSERVER2022.DATAMART_ACCIDENTS.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[MAX\MSSQLSERVER2022.DATAMART_ACCIDENTS.sa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Dim_Description_Accidents\Destino Dim_Description_Accidents.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dim_Description_Accidents\Destino Dim_Description_Accidents.Inputs[OLE DB Destination Input].Columns[Description]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="800"
+                      cachedName="Description"
+                      externalMetadataColumnId="Package\Dim_Description_Accidents\Destino Dim_Description_Accidents.Inputs[OLE DB Destination Input].ExternalColumns[Description]"
+                      lineageId="Package\Dim_Description_Accidents\Merge Join.Outputs[Merge Join Output].Columns[Description]" />
+                    <inputColumn
+                      refId="Package\Dim_Description_Accidents\Destino Dim_Description_Accidents.Inputs[OLE DB Destination Input].Columns[Id_Staging]"
+                      cachedDataType="i4"
+                      cachedName="Id_Staging"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\Dim_Description_Accidents\Destino Dim_Description_Accidents.Inputs[OLE DB Destination Input].ExternalColumns[Description_Accidents_Codigo]"
+                      lineageId="Package\Dim_Description_Accidents\Merge Join.Outputs[Merge Join Output].Columns[Id_Staging]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Dim_Description_Accidents\Destino Dim_Description_Accidents.Inputs[OLE DB Destination Input].ExternalColumns[Description_Accidents_Key]"
+                      dataType="i4"
+                      name="Description_Accidents_Key" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Description_Accidents\Destino Dim_Description_Accidents.Inputs[OLE DB Destination Input].ExternalColumns[Description_Accidents_Codigo]"
+                      dataType="i4"
+                      name="Description_Accidents_Codigo" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Description_Accidents\Destino Dim_Description_Accidents.Inputs[OLE DB Destination Input].ExternalColumns[Description]"
+                      codePage="1252"
+                      dataType="str"
+                      length="800"
+                      name="Description" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Dim_Description_Accidents\Destino Dim_Description_Accidents.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Dim_Description_Accidents\Destino Dim_Description_Accidents.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim_Description_Accidents\Destino Dim_Description_Accidents.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dim_Description_Accidents\Destino Dim_Description_Accidents.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dim_Description_Accidents\Destino Dim_Description_Accidents.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dim_Description_Accidents\Destino Dim_Description_Accidents.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Dim_Description_Accidents\Insertar Registros en Dim_Description_Accidents_Mod"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="Insertar Registros en Dim_Description_Accidents_Mod"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">INSERT INTO [STAGING_ACCIDENTS].[dbo].[Dim_Description_Accidents_Mod]
+([Description_Accidents_Codigo],[Description],[ETL_DateLoad])
+VALUES
+(?,?, GETDATE())</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Dim_Description_Accidents\Insertar Registros en Dim_Description_Accidents_Mod.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[MAX\MSSQLSERVER2022.STAGING_ACCIDENTS.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[MAX\MSSQLSERVER2022.STAGING_ACCIDENTS.sa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Dim_Description_Accidents\Insertar Registros en Dim_Description_Accidents_Mod.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dim_Description_Accidents\Insertar Registros en Dim_Description_Accidents_Mod.Inputs[OLE DB Command Input].Columns[Description_Accidents_Codigo_DataMart]"
+                      cachedDataType="i4"
+                      cachedName="Description_Accidents_Codigo_DataMart"
+                      externalMetadataColumnId="Package\Dim_Description_Accidents\Insertar Registros en Dim_Description_Accidents_Mod.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Dim_Description_Accidents\Merge Join.Outputs[Merge Join Output].Columns[Description_Accidents_Codigo_DataMart]" />
+                    <inputColumn
+                      refId="Package\Dim_Description_Accidents\Insertar Registros en Dim_Description_Accidents_Mod.Inputs[OLE DB Command Input].Columns[Description_DataMart]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="800"
+                      cachedName="Description_DataMart"
+                      externalMetadataColumnId="Package\Dim_Description_Accidents\Insertar Registros en Dim_Description_Accidents_Mod.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Dim_Description_Accidents\Merge Join.Outputs[Merge Join Output].Columns[Description_DataMart]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Dim_Description_Accidents\Insertar Registros en Dim_Description_Accidents_Mod.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      dataType="i4"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Dim_Description_Accidents\Insertar Registros en Dim_Description_Accidents_Mod.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="800"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Dim_Description_Accidents\Insertar Registros en Dim_Description_Accidents_Mod.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\Dim_Description_Accidents\Insertar Registros en Dim_Description_Accidents_Mod.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Dim_Description_Accidents\Insertar Registros en Dim_Description_Accidents_Mod.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\Dim_Description_Accidents\Insertar Registros en Dim_Description_Accidents_Mod.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim_Description_Accidents\Insertar Registros en Dim_Description_Accidents_Mod.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dim_Description_Accidents\Insertar Registros en Dim_Description_Accidents_Mod.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dim_Description_Accidents\Insertar Registros en Dim_Description_Accidents_Mod.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dim_Description_Accidents\Insertar Registros en Dim_Description_Accidents_Mod.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Dim_Description_Accidents\Merge Join"
+              componentClassID="Microsoft.MergeJoin"
+              contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combine two sorted data flows into one using the FULL, LEFT, or INNER join. We recommend this transformation when data flows can be sorted at their sources."
+              name="Merge Join"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of join to perform."
+                  name="JoinType"
+                  typeConverter="JoinType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of columns in the ordering key."
+                  name="NumKeyColumns">1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the null values are treated as equal values."
+                  name="TreatNullsAsEqual">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Indicates the requested maximum buffers per input before blocking."
+                  name="MaxBuffersPerInput">5</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Dim_Description_Accidents\Merge Join.Inputs[Merge Join Left Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Left Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dim_Description_Accidents\Merge Join.Inputs[Merge Join Left Input].Columns[Id_Staging]"
+                      cachedDataType="i4"
+                      cachedName="Id_Staging"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Dim_Description_Accidents\Staging S_Accidents.Outputs[OLE DB Source Output].Columns[Id_Staging]" />
+                    <inputColumn
+                      refId="Package\Dim_Description_Accidents\Merge Join.Inputs[Merge Join Left Input].Columns[Description]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="800"
+                      cachedName="Description"
+                      lineageId="Package\Dim_Description_Accidents\Staging S_Accidents.Outputs[OLE DB Source Output].Columns[Description]" />
+                    <inputColumn
+                      refId="Package\Dim_Description_Accidents\Merge Join.Inputs[Merge Join Left Input].Columns[StageMD5]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="StageMD5"
+                      lineageId="Package\Dim_Description_Accidents\Stage MD5.Outputs[Salida 0].Columns[StageMD5]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Dim_Description_Accidents\Merge Join.Inputs[Merge Join Right Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Right Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dim_Description_Accidents\Merge Join.Inputs[Merge Join Right Input].Columns[Description_Accidents_Codigo]"
+                      cachedDataType="i4"
+                      cachedName="Description_Accidents_Codigo"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Dim_Description_Accidents\Datamart Dim_Description_Accidents.Outputs[OLE DB Source Output].Columns[Description_Accidents_Codigo]" />
+                    <inputColumn
+                      refId="Package\Dim_Description_Accidents\Merge Join.Inputs[Merge Join Right Input].Columns[Description_Accidents_Key]"
+                      cachedDataType="i4"
+                      cachedName="Description_Accidents_Key"
+                      lineageId="Package\Dim_Description_Accidents\Datamart Dim_Description_Accidents.Outputs[OLE DB Source Output].Columns[Description_Accidents_Key]" />
+                    <inputColumn
+                      refId="Package\Dim_Description_Accidents\Merge Join.Inputs[Merge Join Right Input].Columns[Description]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="800"
+                      cachedName="Description"
+                      lineageId="Package\Dim_Description_Accidents\Datamart Dim_Description_Accidents.Outputs[OLE DB Source Output].Columns[Description]" />
+                    <inputColumn
+                      refId="Package\Dim_Description_Accidents\Merge Join.Inputs[Merge Join Right Input].Columns[DataMartMD5]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="DataMartMD5"
+                      lineageId="Package\Dim_Description_Accidents\DataMart MD5.Outputs[Salida 0].Columns[DataMartMD5]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Dim_Description_Accidents\Merge Join.Outputs[Merge Join Output]"
+                  isSorted="true"
+                  name="Merge Join Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim_Description_Accidents\Merge Join.Outputs[Merge Join Output].Columns[Id_Staging]"
+                      dataType="i4"
+                      lineageId="Package\Dim_Description_Accidents\Merge Join.Outputs[Merge Join Output].Columns[Id_Staging]"
+                      name="Id_Staging"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Dim_Description_Accidents\Merge Join.Inputs[Merge Join Left Input].Columns[Id_Staging]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dim_Description_Accidents\Merge Join.Outputs[Merge Join Output].Columns[Description]"
+                      codePage="1252"
+                      dataType="str"
+                      length="800"
+                      lineageId="Package\Dim_Description_Accidents\Merge Join.Outputs[Merge Join Output].Columns[Description]"
+                      name="Description">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Dim_Description_Accidents\Merge Join.Inputs[Merge Join Left Input].Columns[Description]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dim_Description_Accidents\Merge Join.Outputs[Merge Join Output].Columns[StageMD5]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Dim_Description_Accidents\Merge Join.Outputs[Merge Join Output].Columns[StageMD5]"
+                      name="StageMD5">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Dim_Description_Accidents\Merge Join.Inputs[Merge Join Left Input].Columns[StageMD5]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dim_Description_Accidents\Merge Join.Outputs[Merge Join Output].Columns[Description_Accidents_Key]"
+                      dataType="i4"
+                      lineageId="Package\Dim_Description_Accidents\Merge Join.Outputs[Merge Join Output].Columns[Description_Accidents_Key]"
+                      name="Description_Accidents_Key">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Dim_Description_Accidents\Merge Join.Inputs[Merge Join Right Input].Columns[Description_Accidents_Key]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dim_Description_Accidents\Merge Join.Outputs[Merge Join Output].Columns[Description_Accidents_Codigo_DataMart]"
+                      dataType="i4"
+                      lineageId="Package\Dim_Description_Accidents\Merge Join.Outputs[Merge Join Output].Columns[Description_Accidents_Codigo_DataMart]"
+                      name="Description_Accidents_Codigo_DataMart">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Dim_Description_Accidents\Merge Join.Inputs[Merge Join Right Input].Columns[Description_Accidents_Codigo]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dim_Description_Accidents\Merge Join.Outputs[Merge Join Output].Columns[Description_DataMart]"
+                      codePage="1252"
+                      dataType="str"
+                      length="800"
+                      lineageId="Package\Dim_Description_Accidents\Merge Join.Outputs[Merge Join Output].Columns[Description_DataMart]"
+                      name="Description_DataMart">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Dim_Description_Accidents\Merge Join.Inputs[Merge Join Right Input].Columns[Description]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dim_Description_Accidents\Merge Join.Outputs[Merge Join Output].Columns[DataMartMD5]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Dim_Description_Accidents\Merge Join.Outputs[Merge Join Output].Columns[DataMartMD5]"
+                      name="DataMartMD5">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Dim_Description_Accidents\Merge Join.Inputs[Merge Join Right Input].Columns[DataMartMD5]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Dim_Description_Accidents\Stage MD5"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Incluye y ejecuta código de scripts personalizados. Por ejemplo, se usa para aplicar una regla de negocios que limita el intervalo de valores válidos de una columna de ingresos o para sumar los valores de dos columnas y calcular el promedio de la suma.;Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;13"
+              description="Incluye y ejecuta código de scripts personalizados. Por ejemplo, se usa para aplicar una regla de negocios que limita el intervalo de valores válidos de una columna de ingresos o para sumar los valores de dos columnas y calcular el promedio de la suma."
+              name="Stage MD5"
+              version="13">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Almacena el código fuente del componente"
+                  isArray="true"
+                  name="SourceCode"
+                  state="cdata">
+                  <arrayElements
+                    arrayElementCount="30">
+                    <arrayElement
+                      dataType="System.String"><![CDATA[My Project\AssemblyInfo.vb]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Imports System
+Imports System.Reflection
+Imports System.Runtime.InteropServices
+
+' General Information about an assembly is controlled through the following 
+' set of attributes. Change these attribute values to modify the information
+' associated with an assembly.
+
+' Review the values of the assembly attributes
+
+<Assembly: AssemblyTitle("SC_72b58de40cc748549930d99234206da9")> 
+<Assembly: AssemblyDescription("")> 
+<Assembly: AssemblyCompany("")> 
+<Assembly: AssemblyProduct("SC_72b58de40cc748549930d99234206da9")> 
+<Assembly: AssemblyCopyright("Copyright @  2025")> 
+<Assembly: AssemblyTrademark("")> 
+<Assembly: CLSCompliant(True)> 
+
+<Assembly: ComVisible(False)> 
+
+'The following GUID is for the ID of the typelib if this project is exposed to COM
+<Assembly: Guid("8222b894-686b-41e2-bcea-bdb05179879c")> 
+
+' Version information for an assembly consists of the following four values:
+'
+'      Major Version
+'      Minor Version 
+'      Build Number
+'      Revision
+'
+' You can specify all the values or you can default the Build and Revision Numbers 
+' by using the '*' as shown below:
+' <Assembly: AssemblyVersion("1.0.*")>
+
+<Assembly: AssemblyVersion("1.0.0.0")> 
+<Assembly: AssemblyFileVersion("1.0.0.0")> 
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[ComponentWrapper.vb]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[' THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
+' Microsoft SQL Server Integration Services component wrapper
+' This module defines the base class for your component
+' THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
+
+Imports System
+Imports System.Data
+Imports Microsoft.SqlServer.Dts.Pipeline
+Imports Microsoft.SqlServer.Dts.Pipeline.Wrapper
+Imports Microsoft.SqlServer.Dts.Runtime.Wrapper
+
+<CLSCompliant(False)> _
+Public Class UserComponent
+    Inherits ScriptComponent
+
+    Public Connections As New Connections(Me)
+    Public Variables As New Variables(Me)
+
+    Public Overrides Sub ProcessInput(ByVal InputID As Integer, ByVal InputName As String, ByVal Buffer As PipelineBuffer, ByVal OutputMap As OutputNameMap)
+
+        If InputName.Equals("Entrada 0", StringComparison.Ordinal) Then
+            Entrada0_ProcessInput(New Entrada0Buffer(Buffer, GetColumnIndexes(InputID), OutputMap))
+        End If
+
+    End Sub
+
+    Public Overridable Sub Entrada0_ProcessInput(ByVal Buffer As Entrada0Buffer)
+
+        While Buffer.NextRow()
+            Entrada0_ProcessInputRow(Buffer)
+        End While
+
+    End Sub
+
+    Public Overridable Sub Entrada0_ProcessInputRow(ByVal Row As Entrada0Buffer)
+
+    End Sub
+
+End Class
+
+<CLSCompliant(False)> _
+Public Class Connections
+
+    Dim ParentComponent As ScriptComponent
+
+    <CLSCompliant(False)> _
+    Public Sub New(ByVal Component As ScriptComponent)
+        ParentComponent = Component
+    End Sub
+
+End Class
+
+<CLSCompliant(False)> _
+Public Class Variables
+
+    Dim ParentComponent As ScriptComponent
+
+    <CLSCompliant(False)> _
+    Public Sub New(ByVal Component As ScriptComponent)
+        ParentComponent = Component
+    End Sub
+
+End Class
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[main.vb]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[#Region "Help:  Introduction to the Script Component"
+' The Script Component allows you to perform virtually any operation that can be accomplished in
+' a .Net application within the context of an Integration Services data flow.
+
+' Expand the other regions which have "Help" prefixes for examples of specific ways to use
+' Integration Services features within this script component.
+#End Region
+
+#Region "Imports"
+Imports System
+Imports System.Data
+Imports System.Math
+Imports Microsoft.SqlServer.Dts.Pipeline.Wrapper
+Imports Microsoft.SqlServer.Dts.Runtime.Wrapper
+Imports Microsoft.SqlServer.Dts.Pipeline
+Imports System.Text
+Imports System.Security.Cryptography
+#End Region
+
+' This is the class to which to add your code.  Do not change the name, attributes, or parent
+' of this class.
+<Microsoft.SqlServer.Dts.Pipeline.SSISScriptComponentEntryPointAttribute> _
+<CLSCompliant(False)> _
+Public Class ScriptMain
+    Inherits UserComponent
+
+#Region "Help:  Using Integration Services variables and parameters"
+    'To use a variable in this script, first ensure that the variable has been added to
+    'either the list contained in the ReadOnlyVariables property or the list contained in
+    'the ReadWriteVariables property of this script component, according to whether or not your
+    'code needs to write into the variable.  To do so, save this script, close this instance of
+    'Visual Studio, and update the ReadOnlyVariables and ReadWriteVariables properties.
+    'To use a parameter in this script, follow the same steps. Parameters are always read-only.
+
+    'Example of reading from a variable or parameter:
+    ' startTime = Variables.MyStartTime;
+
+    'Example of writing to a variable:
+    ' Variables.myStringVariable = "new value";
+#End Region
+
+#Region "Help:  Using Integration Services Connnection Managers"
+    'Some types of connection managers can be used in this script component.  See the help topic
+    '"Working with Connection Managers Programatically" for details.
+
+    'To use a connection manager in this script, first ensure that the connection manager has
+    'been added to either the list of connection managers on the Connection Managers page of the
+    'script component editor.  To add the connection manager, save this script, close this instance of
+    ' Visual Studio, and add the Connection Manager to the list.
+
+    'If the component needs to hold a connection open while processing rows, override the
+    'AcquireConnections and ReleaseConnections methods.
+
+    'Example of using an ADO.Net connection manager to acquire a SqlConnection:
+    ' Dim rawConnection As Object = Connections.SalesDB.AcquireConnection(Transaction)
+    ' Dim salesDBConn As SqlConnection = CType(rawConnection, SqlConnection)
+
+    'Example of using a File connection manager to acquire a file path:
+    ' Dim rawConnection As Object = Connections.Prices_zip.AcquireConnection(Transaction)
+    ' Dim filePath As String = CType(rawConnection, String)
+
+    'Example of releasing a connection manager:
+    ' Connections.SalesDB.ReleaseConnection(rawConnection)
+#End Region
+
+#Region "Help:  Firing Integration Services Events"
+    'This script component can fire events.
+
+    'Example of firing an error event:
+    ' ComponentMetaData.FireError(10, "Process Values", "Bad value", "", 0, cancel)
+
+    'Example of firing an information event:
+    ' ComponentMetaData.FireInformation(10, "Process Values", "Processing has started", "", 0, fireAgain)
+
+    'Example of firing a warning event:
+    ' ComponentMetaData.FireWarning(10, "Process Values", "No rows were received", "", 0)
+
+#End Region
+
+    'This method is called once, before rows begin to be processed in the data flow.
+    '
+    'You can remove this method if you don't need to do anything here.
+    Public Overrides Sub PreExecute()
+        MyBase.PreExecute()
+        '
+        ' Add your code here
+        '
+    End Sub
+
+    ' This method is called after all the rows have passed through this component.
+    '
+    ' You can delete this method if you don't need to do anything here.
+    Public Overrides Sub PostExecute()
+        MyBase.PostExecute()
+        '
+        ' Add your code here
+        '
+    End Sub
+
+    'This method is called once for every row that passes through the component from Entrada0.
+    '
+    'Example of reading a value from a column in the the row:
+    ' zipCode = Row.ZipCode
+    '
+    'Example of writing a value to a column in the row:
+    ' Row.ZipCode = zipCode
+    Private inputBuffer As PipelineBuffer
+
+    Public Overrides Sub ProcessInput(ByVal InputID As Integer, ByVal Buffer As Microsoft.SqlServer.Dts.Pipeline.PipelineBuffer)
+
+        inputBuffer = Buffer
+
+        MyBase.ProcessInput(InputID, Buffer)
+
+    End Sub
+
+    Public Shared Function CreateHash(ByVal data As String) As String
+        Dim dataToHash As Byte() = (New UnicodeEncoding()).GetBytes(data)
+        Dim md5 As MD5 = New MD5CryptoServiceProvider()
+        Dim hashedData As Byte() = md5.ComputeHash(dataToHash)
+        RNGCryptoServiceProvider.Create().GetBytes(dataToHash)
+        Dim s As String = Convert.ToBase64String(hashedData, Base64FormattingOptions.None)
+        Return s
+    End Function
+
+    Public Overrides Sub Entrada0_ProcessInputRow(ByVal Row As Entrada0Buffer)
+        Dim counter As Integer = 0
+        Dim values As New StringBuilder
+        For counter = 0 To inputBuffer.ColumnCount - 1
+            Dim value As Object
+            value = inputBuffer.Item(counter)
+            values.Append(value)
+        Next
+
+        'CAMBIAR EL VALOR VariableSalida A SU COLUMNA DE SALIDA
+        Row.StageMD5 = CreateHash(values.ToString())
+    End Sub
+
+End Class
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[My Project\Settings.settings]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)" GeneratedClassNamespace="" GeneratedClassName="MySettings">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[My Project\Settings.Designer.vb]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA['------------------------------------------------------------------------------
+' <autogenerated>
+'     This code was generated by a tool.
+'
+'     Changes to this file may cause incorrect behavior and will be lost if
+'     the code is regenerated.
+' </autogenerated>
+'------------------------------------------------------------------------------
+
+Option Strict Off
+Option Explicit On
+
+
+
+Partial Friend NotInheritable Class MySettings
+    Inherits System.Configuration.ApplicationSettingsBase
+
+    Private Shared m_Value As MySettings
+
+    Private Shared m_SyncObject As Object = New Object
+
+    <System.Diagnostics.DebuggerNonUserCode()> _
+    Public Shared ReadOnly Property Value() As MySettings
+        Get
+            If (MySettings.m_Value Is Nothing) Then
+                System.Threading.Monitor.Enter(MySettings.m_SyncObject)
+                If (MySettings.m_Value Is Nothing) Then
+                    Try
+                        MySettings.m_Value = New MySettings
+                    Finally
+                        System.Threading.Monitor.Exit(MySettings.m_SyncObject)
+                    End Try
+                End If
+            End If
+            Return MySettings.m_Value
+        End Get
+    End Property
+End Class
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[BufferWrapper.vb]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[' THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
+' Microsoft SQL Server Integration Services buffer wrappers
+' This module defines classes for accessing data flow buffers
+' THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
+
+
+Option Strict Off   ' This allows usage of PipelineBuffer typed accessors.
+
+Imports System
+Imports System.Data
+Imports Microsoft.SqlServer.Dts.Pipeline
+Imports Microsoft.SqlServer.Dts.Pipeline.Wrapper
+
+<CLSCompliant(False)> _
+Public Class Entrada0Buffer
+    Inherits ScriptBuffer
+
+    Public Sub New(ByVal Buffer As PipelineBuffer, ByVal BufferColumnIndexes As Integer(), ByVal OutputMap As OutputNameMap)
+        MyBase.New(Buffer, BufferColumnIndexes, OutputMap)
+    End Sub
+
+    Public ReadOnly Property [IdStaging]() As Int32
+        Get
+            Return Buffer.GetInt32(Me.BufferColumnIndexes(0))
+        End Get
+    End Property
+    Public ReadOnly Property [IdStaging_IsNull] As Boolean
+        Get
+            Return IsNull(0)
+        End Get
+    End Property
+
+    Public ReadOnly Property [Description]() As String
+        Get
+            Return Buffer.GetString(Me.BufferColumnIndexes(1))
+        End Get
+    End Property
+    Public ReadOnly Property [Description_IsNull] As Boolean
+        Get
+            Return IsNull(1)
+        End Get
+    End Property
+
+    Public WriteOnly Property [StageMD5]() As String
+        Set
+            Me(2) = Value
+        End Set
+    End Property
+    Public WriteOnly Property [StageMD5_IsNull] As Boolean
+        Set
+            If (value)
+                SetNull(2)
+            Else
+                Throw new InvalidOperationException("La propiedad IsNull no puede establecerse en False. En su lugar, asigne un valor a la columna.")
+            End If
+        End Set
+    End Property
+
+    Public Overloads Function NextRow() As Boolean
+        NextRow = MyBase.NextRow()
+    End Function
+
+    Public Overloads Function EndOfRowset() As Boolean
+        EndOfRowset = MyBase.EndOfRowset
+    End Function
+
+End Class
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Project]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF16LE]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="3.0" schemaVersion="1.0">
+  <msb:PropertyGroup>
+    <msb:Language>msBuild</msb:Language>
+    <msb:CodeName>SC_72b58de40cc748549930d99234206da9</msb:CodeName>
+    <msb:DisplayName>SC_72b58de40cc748549930d99234206da9</msb:DisplayName>
+    <msb:ProjectId>{21E3579A-4DF2-4CBE-B685-A9CF7BD8F7E2}</msb:ProjectId>
+  </msb:PropertyGroup>
+  <msb:ItemGroup>
+    <msb:Project Include="SC_72b58de40cc748549930d99234206da9.vbproj" />
+    <msb:File Include="My Project\AssemblyInfo.vb" />
+    <msb:File Include="My Project\Resources.resx" />
+    <msb:File Include="My Project\Resources.Designer.vb" />
+    <msb:File Include="My Project\Settings.settings" />
+    <msb:File Include="My Project\Settings.Designer.vb" />
+    <msb:File Include="main.vb" />
+    <msb:File Include="BufferWrapper.vb" />
+    <msb:File Include="ComponentWrapper.vb" />
+  </msb:ItemGroup>
+</c:Project>]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[My Project\Resources.resx]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+</root>]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[SC_72b58de40cc748549930d99234206da9.vbproj]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EB633691-9515-4B11-91C7-BAF1DDFA1851}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>My Project</AppDesignerFolder>
+    <RootNamespace>SC_72b58de40cc748549930d99234206da9</RootNamespace>
+    <AssemblyName>SC_72b58de40cc748549930d99234206da9</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <!-- This sections specifies references for the project. -->
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.SqlServer.TxScript, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.DTSRuntimeWrap, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.DTSPipelineWrap, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.PipelineHost, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Compile Include="main.vb" />
+    <Compile Include="BufferWrapper.vb" />
+    <Compile Include="ComponentWrapper.vb" />
+  </ItemGroup>
+  <!-- Visual Basic supports Importing namespaces (equivalent to using statements in C#).-->
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="My Project\" />
+    <Compile Include="My Project\AssemblyInfo.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <!-- Include the build rules for a VB project.-->
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- This section defines VSTA properties that describe the host-changable project properties. -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}">
+        <ProjectProperties HostName="VSTAHostName" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="vb" TemplatesPath="" />
+        <Host Name="SSIS_SC160" />
+        <ProjectClient>
+          <HostIdentifier>SSIS_SC160</HostIdentifier>
+        </ProjectClient>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[My Project\Resources.Designer.vb]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA['------------------------------------------------------------------------------
+' <autogenerated>
+'     This code was generated by a tool.
+'
+'     Changes to this file may cause incorrect behavior and will be lost if
+'     the code is regenerated.
+' </autogenerated>
+'------------------------------------------------------------------------------
+
+Option Strict Off
+Option Explicit On
+
+
+Namespace My.Resources
+    
+    '''<summary>
+    '''   A strongly-typed resource class, for looking up localized strings, etc.
+    '''</summary>
+    'This class was auto-generated by the Strongly Typed Resource Builder
+    'class via a tool like ResGen or Visual Studio.NET.
+    'To add or remove a member, edit your .ResX file then rerun ResGen
+    'with the /str option, or rebuild your VS project.
+    Class MyResources
+        
+        Private Shared _resMgr As System.Resources.ResourceManager
+        
+        Private Shared _resCulture As System.Globalization.CultureInfo
+        
+        Friend Sub New()
+            MyBase.New
+        End Sub
+        
+        '''<summary>
+        '''   Returns the cached ResourceManager instance used by this class.
+        '''</summary>
+        <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
+        Public Shared ReadOnly Property ResourceManager() As System.Resources.ResourceManager
+            Get
+                If (_resMgr Is Nothing) Then
+                    Dim temp As System.Resources.ResourceManager = New System.Resources.ResourceManager("My.Resources.MyResources", GetType(MyResources).Assembly)
+                    _resMgr = temp
+                End If
+                Return _resMgr
+            End Get
+        End Property
+        
+        '''<summary>
+        '''   Overrides the current thread's CurrentUICulture property for all
+        '''   resource lookups using this strongly typed resource class.
+        '''</summary>
+        <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
+        Public Shared Property Culture() As System.Globalization.CultureInfo
+            Get
+                Return _resCulture
+            End Get
+            Set
+                _resCulture = value
+            End Set
+        End Property
+    End Class
+End Namespace
+]]></arrayElement>
+                  </arrayElements>
+                </property>
+                <property
+                  dataType="System.String"
+                  description="Almacena la representación binaria del componente"
+                  isArray="true"
+                  name="BinaryCode"
+                  state="cdata">
+                  <arrayElements
+                    arrayElementCount="2">
+                    <arrayElement
+                      dataType="System.String"><![CDATA[SC_72b58de40cc748549930d99234206da9.dll]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAP8ZlGcAAAAAAAAAAOAAIiALAVAAACAAAAAIAAAAAAAA8j8A
+AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACAAAAAAgAAAAAAAAMAYIUAABAA
+ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAKA/AABPAAAAAEAAAEgEAAAAAAAAAAAAAAAAAAAA
+AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAA+B8AAAAgAAAAIAAAAAIA
+AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAEgEAAAAQAAAAAYAAAAiAAAAAAAAAAAAAAAAAABAAABA
+LnJlbG9jAAAMAAAAAGAAAAACAAAAKAAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAADU
+PwAAAAAAAEgAAAACAAUA5CMAAAQbAAABAAAAAAAAAOg+AAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4CKBgAAAoqHgIoGQAACiqmcxoAAAqAAQAABHMbAAAKgAIA
+AARzHAAACoADAAAEcx0AAAqABAAABCoufgEAAARvHgAACioufgIAAARvHwAACioufgMAAARvIAAA
+CioufgQAAARvIQAACioeAigiAAAKKq5+BQAABC0ecgEAAHDQBQAAAigjAAAKbyQAAApzJQAACoAF
+AAAEfgUAAAQqGn4GAAAEKh4CgAYAAAQqHgIoGwAABioeAigmAAAKKh4CKCcAAAoqQgIEfQcAAAQC
+AwQoKAAACioAABMwAwApAAAAAQAAEXMpAAAKAm8qAAAKCnMrAAAKBm8sAAAKKC0AAAoGby4AAAoW
+KC8AAAoqAAAAEzACAFMAAAACAAARFgpzMAAACgsCewcAAARvMQAAChfaDBYKKyMCewcAAAQGbzIA
+AAooMwAACg0HCSgzAAAKbzQAAAomBhfWCgYIMdkDB281AAAKKBAAAAZvFwAABioqAgMEBSg2AAAK
+KlICezcAAAoCezgAAAoWlG85AAAKKiICFig6AAAKKlICezcAAAoCezgAAAoXlG87AAAKKiICFyg6
+AAAKKiYCGAMoPAAACipaAywIAhgoPQAACipyMwAAcHM+AAAKegATMAEACQAAAAMAABECKD8AAAoK
+BioAAAATMAEACQAAAAMAABECKEAAAAoKBip+AihBAAAKAgJzHwAABn0IAAAEAgJzIAAABn0JAAAE
+KpIEcvIAAHAab0IAAAosFQIFAgMoQwAACg4EcxIAAAZvHQAABipKKwcCA28eAAAGA28ZAAAGLfEq
+Bio6AigiAAAKAgN9CgAABCo6AigiAAAKAgN9CwAABCpCcyIAAAooMwAACoANAAAEKh4CKEQAAAoq
+AAAbMAEAPwAAAAAAAAB+DAAABC0yfg0AAAQoMwAACihFAAAKfgwAAAQtHHMiAAAGgAwAAATeEH4N
+AAAEKDMAAAooRgAACtx+DAAABCoAARAAAAIAHQAMKQAQAAAAADYCAygzAAAKKEcAAAoqHgIoSAAA
+Ciou0AwAAAIoIwAACioeAihJAAAKKgAAEzABABQAAAAEAAARAowFAAAbLQgoAQAAKworAgIKBioi
+A/4VBQAAGyoAAAATMAIAKAAAAAUAABECe0sAAApvTAAACgoGjAgAABstEigCAAArCgJ7SwAACgZv
+TQAACgYqSgIoIgAACgJzTgAACn1LAAAKKgBCU0pCAQABAAAAAAAMAAAAdjQuMC4zMDMxOQAAAAAF
+AGwAAAB4CgAAI34AAOQKAAAQCwAAI1N0cmluZ3MAAAAA9BUAAAgBAAAjVVMA/BYAABAAAAAjR1VJ
+RAAAAAwXAAD4AwAAI0Jsb2IAAAAAAAAAAgAAAVcVogkJDwAAAPoBMwAWAAABAAAANwAAAA0AAAAO
+AAAALAAAABUAAABOAAAAPQAAAAUAAAAFAAAADgAAAA8AAAAIAAAAAQAAAAUAAAABAAAAAgAAAAMA
+AAACAAAAAAAOBQEAAAAAAAYAPQOTCAYA5wOTCAYAFALUBw8AOQkAAAYAVQIVBgYAIAMVBgYAzgMV
+BgYAXQMVBgYAdgMVBgYAnAIVBgYAkQOQBQYAQQJNCAYAvQFNCAYA6AIVBgYAtwJ2BAoA4AFYBwoA
+qAH4BAoAKAL4BA4AeQEjCA4AjgfnBwYA0ALUBw4AbAJsCA4AhAKtAAYAywmQBQ4AdAcjCA4ABQOt
+AAYAUAGQBQ4AAQDOBAoAywGlBQYASAezCAYAYgYABhIApwMsARYAHAcsAQYAyQSQBQYA/waHChIA
+KwcsARIAbgYsARIACwosAQoAiQHrBQYA9wHUBwYA/gCQBQYABgsVBgYAWASHCgYAXwSHCgYAhgbl
+CgYAlwXlCgYAnwflCgYASAqQBQYAngmQBQYAtgmTCAYAJwaQBQYAqwSQBQYAUQaQBQYAzAdHBAYA
+tQeQBQAAAABlAAAAAAABAAEAAAAAAN0FvgpNAAEAAQAAAAAAjAe+ClEAAQACAAABEADSCb4KYQAB
+AAMAAAAAAPUIxAhhAAUACAABAAAAwgVBACAABwAMAAEAAAANB0EAkQAIABIAAQAAAO0JQQCZAAgA
+GwABAAAAkglBAGEACgAfAAEAAABICUEAYQALACAAAAEQAIAJQQCdAAwAIQAFAQAAFQgAAGEADgAk
+AAUBAAAQAAAAYQAOACsAMQDIBlcBMQCfBl8BMQCzBmcBMQDhBm8BEQCXB3cBEQBtAXsBAQA4B8IA
+BgCSCX8BBgBICYMBAQD7CYcBAQD7CYcBEQAcBIwBEQDFCZABIQCTCh8BUCAAAAAABhi/BwYAAQBY
+IAAAAAAGGL8HBgABAGAgAAAAABEYxQeTAQEAiiAAAAAAEwh/B5cBAQCWIAAAAAATCM0FnAEBAKIg
+AAAAABMIcAehAQEAriAAAAAAEwgFCKYBAQC6IAAAAAADGL8HBgABAMIgAAAAABYIRAerAQEA7iAA
+AAAAFghVAbABAQD1IAAAAAAWCGEBtQEBAP0gAAAAAAYYvwcGAAIABSEAAAAAxgIFBAYAAgANIQAA
+AADGAhAEBgACABUhAAAAAMYCegplAAIAKCEAAAAAFgCyBLsBBABgIQAAAADGAp0KwAEFAL8hAAAA
+AAYYvwe2AAYAyiEAAAAABghoBJ0ACQDfIQAAAAAGCEoF5AAJAOghAAAAAAYIQQayAAkA/SEAAAAA
+BghfBeQACQAGIgAAAAAGCDQAEAAJABAiAAAAAAYINgUVAAoAKCIAAAAAhgC2CuQACwBAIgAAAACG
+ANwJ5AALAFUiAAAAAAYYvwcGAAsAdSIAAAAAxgJ6CsYBCwCaIgAAAABGA3EKwAEPAK0iAAAAAEYD
+nQrAARAAryIAAAAABhi/B9IBEQC+IgAAAAAGGL8H0gESAM0iAAAAABEYxQeTARMA3iIAAAAABhi/
+BwYAEwDoIgAAAAAWCCQE2QETAEQjAAAAAMYCiwn7ABMAUiMAAAAAxgLyAJ0AFABaIwAAAACDAE0B
+3gEUAGYjAAAAAMYCnwSyABQAcCMAAAAAEQCMAOMBFACQIwAAAAABAHgA6wEVALogAAAAAAYYvwcG
+ABYAnCMAAAAAAwjZAEoAFgDQIwAAAAAGGL8HBgAWAAAAAQBBBAAAAQBuAAAAAgA9BwAAAQCfAAAA
+AQC6CgAAAQA9BwAAAgBbCQAAAwB8BgAAAQBBBAAAAQBBBAAAAQBuAAAAAgAiAQAAAwA9BwAABAB8
+BgAAAQA9BwAAAQC6CgAAAQARCgAAAQARCgAAAQBsBgAAAQDpAAAAAQDpAAkAvwcBABEAvwcGABkA
+vwcKACkAvwcQADEAvwcQADkAvwcQAEEAvwcQAEkAvwcQAFEAvwcQAFkAvwcVAGEAvwcVAGkAvwcQ
+AHEAvwcQAHkAvwcQAIEAvwcaAJEAvwcgAKkAvwcGALEAvwcGALkAvwcGANEAvwcmAOkAvwcQAAEB
+vwcGAEEBvwcGAJkAvwcGAKEAvwcGAAwAvwcGABQAvwcGABwAvwcGACQAvwcGAAwA2QBKABQA2QBK
+ABwA2QBKACQA2QBKAMEAvwcGANkAEAFPANkAAgtXAPEAvwddADEBBQQGADEBEAQGADEBegplAFkB
+vwcGAGEBUglyAGkBvwcGAHEBvQR4AHkBoQF/AHkBUgmFAIEBkASLABkBvwcGAAkBGwqdAAkBfgWh
+AJEBOASmABkBwwCrABkBnwSyACEBvwe2ACEBPQfCACEBWwnHAAkBKwDLACEBbwXQAAkBqATVACEB
+hwXaACEBdgUBAJkBvwcQACEBtgrkACEB3AnkADEBvwcGAKEBiwnoADEBbwnwADkBvwcGALEBeQf2
+ALEB6An2AMEAiwn7AMEA8gCdAMEAnwSyALkBygAIATQAkwofATwAJARKADwALgQ2ATwAvwcGACkA
+qwCyAy4ACwAnAi4AEwAwAi4AGwBPAi4AIwBYAi4AKwCBAi4AMwCBAi4AOwBYAi4AQwCHAi4ASwCB
+Ai4AUwCeAi4AWwCBAi4AYwCkAi4AawDOAi4AcwDbAkAAiwApA0AAgwAuA0MAewA3A0MAgwAuA0kA
+qwDDA2MAewA3A2MAgwAuA2kAqwDXA4AAiwApA4MAkwApA4MAmwApA4MAewA3A4kAqwDkA6AAiwAp
+A6kAgwBPAsAAiwApA8MAswApA8MAUwCBAskAgwBPAuAAiwApA+MAUwCBAgMBUwCBAiMBUwCBAkMB
+UwCBAoMBgwAuA4MBowBQA6MBgwAuA6MBWwCBAqkBuwApA+ADUwCBAgAEUwCBAoAEgwAuA4AEiwAp
+A6AEgwAuA6AEiwApA8AEgwAuA8AEiwApA+AEgwAuA+AEiwApAwAFiwApAyAFiwApA0AFiwApA0AF
+gwAuA2AFiwApA4AFiwApA4AFgwAuA20AlADgAAABEwEEAAEABQAFAAcABwALAA0ADQAOAAAAjgfz
+AQAA3wX4AQAAdAf9AQAAFwgCAgAASAcHAgAAcQEMAgAAbAQRAgAATgUVAgAARQYZAgAAYwUVAgAA
+OAAZAgAAOgUVAgAAQQQdAgAA3QAiAgIABAADAAIABQAFAAIABgAHAAIABwAJAAIACQALAAIACgAN
+AAEACwANAAIAEwAPAAIAFAARAAIAFQATAAIAFgAVAAEAFwAXAAEAGAAZAAIAIwAbAAIAKwAdAC4A
+NQA8AEMABQEYAScBLgEEgAAAAQAAAAAAAAAAAAAAAABBAAAABAAAAAAAAAAAAAAAPAGkAAAAAAAE
+AAAAAAAAAAAAAAA8AZAFAAAAAAoAAAAAAAAAAAAAAEUBrQAAAAAAEAAAAAAAAAAAAAAATgErCgAA
+AAAQAAAAAAAAAAAAAABOAVAKAAAAAAAAAAABAAAAAQkAAAwABAANAAQAAAAQABoAdgAAABAAUQB2
+AAAAAABTAHYAlQAOAZUAMQEAAAAAAENvbnRleHRWYWx1ZWAxAFRocmVhZFNhZmVPYmplY3RQcm92
+aWRlcmAxAEdldEludDMyAHNldF9TdGFnZU1ENQBTQ183MmI1OGRlNDBjYzc0ODU0OTkzMGQ5OTIz
+NDIwNmRhOQA8TW9kdWxlPgBJbnB1dElEAFQARGlzcG9zZV9fSW5zdGFuY2VfXwBDcmVhdGVfX0lu
+c3RhbmNlX18AZGF0YQBtc2NvcmxpYgBNaWNyb3NvZnQuVmlzdWFsQmFzaWMAQXBwZW5kAENyZWF0
+ZUluc3RhbmNlAGdldF9HZXRJbnN0YW5jZQBpbnN0YW5jZQBHZXRIYXNoQ29kZQBSdW50aW1lVHlw
+ZUhhbmRsZQBHZXRUeXBlRnJvbUhhbmRsZQBJbnB1dE5hbWUATWljcm9zb2Z0LlNxbFNlcnZlci5E
+dHMuUGlwZWxpbmUAR2V0VHlwZQBnZXRfQ3VsdHVyZQBzZXRfQ3VsdHVyZQBfcmVzQ3VsdHVyZQBB
+cHBsaWNhdGlvbkJhc2UAQXBwbGljYXRpb25TZXR0aW5nc0Jhc2UAQ3JlYXRlAEVkaXRvckJyb3dz
+YWJsZVN0YXRlAEd1aWRBdHRyaWJ1dGUASGVscEtleXdvcmRBdHRyaWJ1dGUAR2VuZXJhdGVkQ29k
+ZUF0dHJpYnV0ZQBEZWJ1Z2dlck5vblVzZXJDb2RlQXR0cmlidXRlAERlYnVnZ2FibGVBdHRyaWJ1
+dGUARWRpdG9yQnJvd3NhYmxlQXR0cmlidXRlAENvbVZpc2libGVBdHRyaWJ1dGUAQXNzZW1ibHlU
+aXRsZUF0dHJpYnV0ZQBTdGFuZGFyZE1vZHVsZUF0dHJpYnV0ZQBIaWRlTW9kdWxlTmFtZUF0dHJp
+YnV0ZQBBc3NlbWJseVRyYWRlbWFya0F0dHJpYnV0ZQBUYXJnZXRGcmFtZXdvcmtBdHRyaWJ1dGUA
+RGVidWdnZXJIaWRkZW5BdHRyaWJ1dGUAQXNzZW1ibHlGaWxlVmVyc2lvbkF0dHJpYnV0ZQBNeUdy
+b3VwQ29sbGVjdGlvbkF0dHJpYnV0ZQBBc3NlbWJseURlc2NyaXB0aW9uQXR0cmlidXRlAENvbXBp
+bGF0aW9uUmVsYXhhdGlvbnNBdHRyaWJ1dGUAQXNzZW1ibHlQcm9kdWN0QXR0cmlidXRlAEFzc2Vt
+Ymx5Q29weXJpZ2h0QXR0cmlidXRlAENMU0NvbXBsaWFudEF0dHJpYnV0ZQBTU0lTU2NyaXB0Q29t
+cG9uZW50RW50cnlQb2ludEF0dHJpYnV0ZQBBc3NlbWJseUNvbXBhbnlBdHRyaWJ1dGUAUnVudGlt
+ZUNvbXBhdGliaWxpdHlBdHRyaWJ1dGUAUHJlRXhlY3V0ZQBQb3N0RXhlY3V0ZQBtX1ZhbHVlAGdl
+dF9WYWx1ZQBzZXRfVmFsdWUAR2V0T2JqZWN0VmFsdWUAU3lzdGVtLlRocmVhZGluZwBVbmljb2Rl
+RW5jb2RpbmcAZ2V0X0lkU3RhZ2luZwBTeXN0ZW0uUnVudGltZS5WZXJzaW9uaW5nAFRvQmFzZTY0
+U3RyaW5nAFRvU3RyaW5nAEdldFN0cmluZwBDcmVhdGVIYXNoAENvbXB1dGVIYXNoAE1hdGgATWlj
+cm9zb2Z0LlZpc3VhbEJhc2ljLk15U2VydmljZXMuSW50ZXJuYWwAU3lzdGVtLkNvbXBvbmVudE1v
+ZGVsAFNDXzcyYjU4ZGU0MGNjNzQ4NTQ5OTMwZDk5MjM0MjA2ZGE5LmRsbABzZXRfU3RhZ2VNRDVf
+SXNOdWxsAGdldF9JZFN0YWdpbmdfSXNOdWxsAGdldF9EZXNjcmlwdGlvbl9Jc051bGwAU2V0TnVs
+bABnZXRfSXRlbQBzZXRfSXRlbQBTeXN0ZW0ASGFzaEFsZ29yaXRobQBTeXN0ZW0uQ29tcG9uZW50
+TW9kZWwuRGVzaWduAFNjcmlwdE1haW4AZ2V0X0FwcGxpY2F0aW9uAE15QXBwbGljYXRpb24AU3lz
+dGVtLkNvbmZpZ3VyYXRpb24AU3lzdGVtLkdsb2JhbGl6YXRpb24AU3lzdGVtLlJlZmxlY3Rpb24A
+SW52YWxpZE9wZXJhdGlvbkV4Y2VwdGlvbgBnZXRfRGVzY3JpcHRpb24AU3RyaW5nQ29tcGFyaXNv
+bgBDdWx0dXJlSW5mbwBPdXRwdXROYW1lTWFwAE91dHB1dE1hcABNRDVDcnlwdG9TZXJ2aWNlUHJv
+dmlkZXIAbV9BcHBPYmplY3RQcm92aWRlcgBtX1VzZXJPYmplY3RQcm92aWRlcgBtX0NvbXB1dGVy
+T2JqZWN0UHJvdmlkZXIAbV9NeVdlYlNlcnZpY2VzT2JqZWN0UHJvdmlkZXIAU3RyaW5nQnVpbGRl
+cgBFbnRyYWRhMEJ1ZmZlcgBQaXBlbGluZUJ1ZmZlcgBTY3JpcHRCdWZmZXIAaW5wdXRCdWZmZXIA
+Z2V0X1Jlc291cmNlTWFuYWdlcgBTeXN0ZW0uQ29kZURvbS5Db21waWxlcgBnZXRfVXNlcgBFbnRl
+cgBnZXRfQ29tcHV0ZXIATXlDb21wdXRlcgBfcmVzTWdyAFJhbmRvbU51bWJlckdlbmVyYXRvcgBB
+Y3RpdmF0b3IALmN0b3IALmNjdG9yAE1vbml0b3IAU3lzdGVtLkRpYWdub3N0aWNzAE1pY3Jvc29m
+dC5WaXN1YWxCYXNpYy5EZXZpY2VzAGdldF9XZWJTZXJ2aWNlcwBNeVdlYlNlcnZpY2VzAE1pY3Jv
+c29mdC5WaXN1YWxCYXNpYy5BcHBsaWNhdGlvblNlcnZpY2VzAFN5c3RlbS5SdW50aW1lLkludGVy
+b3BTZXJ2aWNlcwBNaWNyb3NvZnQuVmlzdWFsQmFzaWMuQ29tcGlsZXJTZXJ2aWNlcwBTeXN0ZW0u
+UnVudGltZS5Db21waWxlclNlcnZpY2VzAFN5c3RlbS5SZXNvdXJjZXMAU0NfNzJiNThkZTQwY2M3
+NDg1NDk5MzBkOTkyMzQyMDZkYTkuTXkuUmVzb3VyY2VzAE15UmVzb3VyY2VzAFNDXzcyYjU4ZGU0
+MGNjNzQ4NTQ5OTMwZDk5MjM0MjA2ZGE5LlJlc291cmNlcy5yZXNvdXJjZXMARGVidWdnaW5nTW9k
+ZXMAVmFyaWFibGVzAEdldEJ5dGVzAEJ1ZmZlckNvbHVtbkluZGV4ZXMAR2V0Q29sdW1uSW5kZXhl
+cwBNeVNldHRpbmdzAEVxdWFscwBDb25uZWN0aW9ucwBCYXNlNjRGb3JtYXR0aW5nT3B0aW9ucwBS
+dW50aW1lSGVscGVycwBtX1N5bmNPYmplY3QATXlQcm9qZWN0AEVuZE9mUm93c2V0AEV4aXQAVXNl
+ckNvbXBvbmVudABQYXJlbnRDb21wb25lbnQAU2NyaXB0Q29tcG9uZW50AGdldF9Db2x1bW5Db3Vu
+dABNaWNyb3NvZnQuU3FsU2VydmVyLlR4U2NyaXB0AENvbnZlcnQATWljcm9zb2Z0LlNxbFNlcnZl
+ci5QaXBlbGluZUhvc3QARW50cmFkYTBfUHJvY2Vzc0lucHV0AFN5c3RlbS5UZXh0AG1fQ29udGV4
+dABFbnRyYWRhMF9Qcm9jZXNzSW5wdXRSb3cATmV4dFJvdwBTQ183MmI1OGRlNDBjYzc0ODU0OTkz
+MGQ5OTIzNDIwNmRhOS5NeQBTeXN0ZW0uU2VjdXJpdHkuQ3J5cHRvZ3JhcGh5AGdldF9Bc3NlbWJs
+eQAAADFNAHkALgBSAGUAcwBvAHUAcgBjAGUAcwAuAE0AeQBSAGUAcwBvAHUAcgBjAGUAcwAAgL1M
+AGEAIABwAHIAbwBwAGkAZQBkAGEAZAAgAEkAcwBOAHUAbABsACAAbgBvACAAcAB1AGUAZABlACAA
+ZQBzAHQAYQBiAGwAZQBjAGUAcgBzAGUAIABlAG4AIABGAGEAbABzAGUALgAgAEUAbgAgAHMAdQAg
+AGwAdQBnAGEAcgAsACAAYQBzAGkAZwBuAGUAIAB1AG4AIAB2AGEAbABvAHIAIABhACAAbABhACAA
+YwBvAGwAdQBtAG4AYQAuAAATRQBuAHQAcgBhAGQAYQAgADAAAAAAjUzK/U0rREOBn7A9r7DSzgAE
+IAEBCAMgAAEFIAEBEREEIAEBDgQgAQECBSACAQ4OBSABARFFByAEAQ4ODg4GFRI0ARIMBhUSNAES
+CAYVEjQBEmUGFRI0ARIwBCAAEwAHAAESbRGApQUgABKAqQcgAgEOEoCpByACAQgSgIUEBwEdBQUg
+AR0FDgYgAR0FHQUFAAASgL0FIAEBHQUIAAIOHQURgMUIBwQIEoCNCBwDIAAIBCABHAgEAAEcHAYg
+ARKAjRwDIAAOCyADARKAhR0IEoCVBAYSgIUDBh0IBCABCAgEIAECCAQgAQ4IBSACAQgcAwcBAgMg
+AAIHIAICDhGA1QUgAR0ICAQAAQEcBCABAhwEBwEeAAIeAAUQAQAeAAQKAR4ABAcBEwAGFRI0ARMA
+BwYVEnEBEwAGFRJxARMAAhMABAoBEwAFIAEBEwAIt3pcVhk04IkIsD9ffxHVCjoIiYRdzYCAzJEH
+BhUSNAESDAcGFRI0ARIIBwYVEjQBEmUHBhUSNAESMAMGEnkDBhJ9AwYSJAMGEigEBhKAmQMGEiwC
+BhwDAAABBAAAEgwEAAASCAQAABJlBAAAEjAEAAASeQQAABJ9BQABARJ9BAABDg4FIAEBEhwLIAQB
+CA4SgIUSgJUGIAEBEoCZBAAAEiwEIAASbQcQAQEeAB4ABzABAQEQHgAECAASDAQIABIIBAgAEmUE
+CAASMAQIABJ5BAgAEn0DKAAIAygAAgMoAA4ECAASLAQoABMACAEACAAAAAAAHgEAAQBUAhZXcmFw
+Tm9uRXhjZXB0aW9uVGhyb3dzAQgBAAIAAAAAACgBACNTQ183MmI1OGRlNDBjYzc0ODU0OTkzMGQ5
+OTIzNDIwNmRhOQAABQEAAAAAFgEAEUNvcHlyaWdodCBAICAyMDI1AAAFAQABAAApAQAkODIyMmI4
+OTQtNjg2Yi00MWUyLWJjZWEtYmRiMDUxNzk4NzljAAAMAQAHMS4wLjAuMAAATQEAHC5ORVRGcmFt
+ZXdvcmssVmVyc2lvbj12NC43LjIBAFQOFEZyYW1ld29ya0Rpc3BsYXlOYW1lFC5ORVQgRnJhbWV3
+b3JrIDQuNy4yBAEAAAAIAQABAAAAAAAYAQAKTXlUZW1wbGF0ZQgxMS4wLjAuMAAAYQEANFN5c3Rl
+bS5XZWIuU2VydmljZXMuUHJvdG9jb2xzLlNvYXBIdHRwQ2xpZW50UHJvdG9jb2wSQ3JlYXRlX19J
+bnN0YW5jZV9fE0Rpc3Bvc2VfX0luc3RhbmNlX18AAAAQAQALTXkuQ29tcHV0ZXIAABMBAA5NeS5B
+cHBsaWNhdGlvbgAADAEAB015LlVzZXIAABMBAA5NeS5XZWJTZXJ2aWNlcwAAtAAAAM7K774BAAAA
+kQAAAGxTeXN0ZW0uUmVzb3VyY2VzLlJlc291cmNlUmVhZGVyLCBtc2NvcmxpYiwgVmVyc2lvbj00
+LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkj
+U3lzdGVtLlJlc291cmNlcy5SdW50aW1lUmVzb3VyY2VTZXQCAAAAAAAAAAAAAABQQURQQURQtAAA
+AMg/AAAAAAAAAAAAAOI/AAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAADUPwAAAAAAAAAAAAAAAF9D
+b3JEbGxNYWluAG1zY29yZWUuZGxsAAAAAAD/JQAgABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAQ
+AAAAGAAAgAAAAAAAAAAAAAAAAAAAAQABAAAAMAAAgAAAAAAAAAAAAAAAAAAAAQAAAAAASAAAAFhA
+AADsAwAAAAAAAAAAAADsAzQAAABWAFMAXwBWAEUAUgBTAEkATwBOAF8ASQBOAEYATwAAAAAAvQTv
+/gAAAQAAAAEAAAAAAAAAAQAAAAAAPwAAAAAAAAAEAAAAAgAAAAAAAAAAAAAAAAAAAEQAAAABAFYA
+YQByAEYAaQBsAGUASQBuAGYAbwAAAAAAJAAEAAAAVAByAGEAbgBzAGwAYQB0AGkAbwBuAAAAAAAA
+ALAETAMAAAEAUwB0AHIAaQBuAGcARgBpAGwAZQBJAG4AZgBvAAAAKAMAAAEAMAAwADAAMAAwADQA
+YgAwAAAAGgABAAEAQwBvAG0AbQBlAG4AdABzAAAAAAAAACIAAQABAEMAbwBtAHAAYQBuAHkATgBh
+AG0AZQAAAAAAAAAAAHAAJAABAEYAaQBsAGUARABlAHMAYwByAGkAcAB0AGkAbwBuAAAAAABTAEMA
+XwA3ADIAYgA1ADgAZABlADQAMABjAGMANwA0ADgANQA0ADkAOQAzADAAZAA5ADkAMgAzADQAMgAw
+ADYAZABhADkAAAAwAAgAAQBGAGkAbABlAFYAZQByAHMAaQBvAG4AAAAAADEALgAwAC4AMAAuADAA
+AABwACgAAQBJAG4AdABlAHIAbgBhAGwATgBhAG0AZQAAAFMAQwBfADcAMgBiADUAOABkAGUANAAw
+AGMAYwA3ADQAOAA1ADQAOQA5ADMAMABkADkAOQAyADMANAAyADAANgBkAGEAOQAuAGQAbABsAAAA
+SAASAAEATABlAGcAYQBsAEMAbwBwAHkAcgBpAGcAaAB0AAAAQwBvAHAAeQByAGkAZwBoAHQAIABA
+ACAAIAAyADAAMgA1AAAAKgABAAEATABlAGcAYQBsAFQAcgBhAGQAZQBtAGEAcgBrAHMAAAAAAAAA
+AAB4ACgAAQBPAHIAaQBnAGkAbgBhAGwARgBpAGwAZQBuAGEAbQBlAAAAUwBDAF8ANwAyAGIANQA4
+AGQAZQA0ADAAYwBjADcANAA4ADUANAA5ADkAMwAwAGQAOQA5ADIAMwA0ADIAMAA2AGQAYQA5AC4A
+ZABsAGwAAABoACQAAQBQAHIAbwBkAHUAYwB0AE4AYQBtAGUAAAAAAFMAQwBfADcAMgBiADUAOABk
+AGUANAAwAGMAYwA3ADQAOAA1ADQAOQA5ADMAMABkADkAOQAyADMANAAyADAANgBkAGEAOQAAADQA
+CAABAFAAcgBvAGQAdQBjAHQAVgBlAHIAcwBpAG8AbgAAADEALgAwAC4AMAAuADAAAAA4AAgAAQBB
+AHMAcwBlAG0AYgBsAHkAIABWAGUAcgBzAGkAbwBuAAAAMQAuADAALgAwAC4AMAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAMAAAA9D8AAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
+                  </arrayElements>
+                </property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del proyecto de Microsoft Visual Studio Tools para Aplicaciones. Los nombres de proyecto deben ser únicos en el paquete."
+                  name="VSTAProjectName"
+                  typeConverter="NOTBROWSABLE">SC_72b58de40cc748549930d99234206da9</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el lenguaje de programación que utiliza el script."
+                  name="ScriptLanguage"
+                  typeConverter="Microsoft.SqlServer.VSTAHosting.ScriptingLanguages">VisualBasic</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica una lista separada por comas de variables de solo lectura."
+                  name="ReadOnlyVariables"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ScriptUIVariablePickerDlg"></property>
+                <property
+                  dataType="System.String"
+                  description="Especifica una lista separada por comas de variables de lectura/escritura."
+                  name="ReadWriteVariables"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ScriptUIWriteableVariablePickerDlg"></property>
+                <property
+                  dataType="System.String"
+                  description="Lista de puntos de interrupción presentes en el script."
+                  isArray="true"
+                  name="BreakpointCollection"
+                  typeConverter="NOTBROWSABLE">
+                  <arrayElements
+                    arrayElementCount="0" />
+                </property>
+                <property
+                  dataType="System.String"
+                  description="Suma de comprobación para comparar los metadatos del componente con los códigos compilados."
+                  name="MetadataChecksum140"
+                  typeConverter="NOTBROWSABLE">B1</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ScriptComponentHost</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Dim_Description_Accidents\Stage MD5.Inputs[Entrada 0]"
+                  hasSideEffects="true"
+                  name="Entrada 0">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dim_Description_Accidents\Stage MD5.Inputs[Entrada 0].Columns[Id_Staging]"
+                      cachedDataType="i4"
+                      cachedName="Id_Staging"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Dim_Description_Accidents\Staging S_Accidents.Outputs[OLE DB Source Output].Columns[Id_Staging]" />
+                    <inputColumn
+                      refId="Package\Dim_Description_Accidents\Stage MD5.Inputs[Entrada 0].Columns[Description]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="800"
+                      cachedName="Description"
+                      lineageId="Package\Dim_Description_Accidents\Staging S_Accidents.Outputs[OLE DB Source Output].Columns[Description]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Dim_Description_Accidents\Stage MD5.Outputs[Salida 0]"
+                  name="Salida 0"
+                  synchronousInputId="Package\Dim_Description_Accidents\Stage MD5.Inputs[Entrada 0]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim_Description_Accidents\Stage MD5.Outputs[Salida 0].Columns[StageMD5]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Dim_Description_Accidents\Stage MD5.Outputs[Salida 0].Columns[StageMD5]"
+                      name="StageMD5" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Dim_Description_Accidents\Staging S_Accidents"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Staging S_Accidents"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT 
+	Id_Staging,
+	Description
+FROM STAGING_ACCIDENTS.dbo.S_ACCIDENTS
+ORDER BY Id_Staging</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Dim_Description_Accidents\Staging S_Accidents.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[MAX\MSSQLSERVER2022.STAGING_ACCIDENTS.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[MAX\MSSQLSERVER2022.STAGING_ACCIDENTS.sa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Dim_Description_Accidents\Staging S_Accidents.Outputs[OLE DB Source Output]"
+                  isSorted="true"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim_Description_Accidents\Staging S_Accidents.Outputs[OLE DB Source Output].Columns[Id_Staging]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Description_Accidents\Staging S_Accidents.Outputs[OLE DB Source Output].ExternalColumns[Id_Staging]"
+                      lineageId="Package\Dim_Description_Accidents\Staging S_Accidents.Outputs[OLE DB Source Output].Columns[Id_Staging]"
+                      name="Id_Staging"
+                      sortKeyPosition="1"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_Description_Accidents\Staging S_Accidents.Outputs[OLE DB Source Output].Columns[Description]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Description_Accidents\Staging S_Accidents.Outputs[OLE DB Source Output].ExternalColumns[Description]"
+                      length="800"
+                      lineageId="Package\Dim_Description_Accidents\Staging S_Accidents.Outputs[OLE DB Source Output].Columns[Description]"
+                      name="Description"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Dim_Description_Accidents\Staging S_Accidents.Outputs[OLE DB Source Output].ExternalColumns[Id_Staging]"
+                      dataType="i4"
+                      name="Id_Staging" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Description_Accidents\Staging S_Accidents.Outputs[OLE DB Source Output].ExternalColumns[Description]"
+                      codePage="1252"
+                      dataType="str"
+                      length="800"
+                      name="Description" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Dim_Description_Accidents\Staging S_Accidents.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim_Description_Accidents\Staging S_Accidents.Outputs[OLE DB Source Error Output].Columns[Id_Staging]"
+                      dataType="i4"
+                      lineageId="Package\Dim_Description_Accidents\Staging S_Accidents.Outputs[OLE DB Source Error Output].Columns[Id_Staging]"
+                      name="Id_Staging" />
+                    <outputColumn
+                      refId="Package\Dim_Description_Accidents\Staging S_Accidents.Outputs[OLE DB Source Error Output].Columns[Description]"
+                      codePage="1252"
+                      dataType="str"
+                      length="800"
+                      lineageId="Package\Dim_Description_Accidents\Staging S_Accidents.Outputs[OLE DB Source Error Output].Columns[Description]"
+                      name="Description" />
+                    <outputColumn
+                      refId="Package\Dim_Description_Accidents\Staging S_Accidents.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dim_Description_Accidents\Staging S_Accidents.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dim_Description_Accidents\Staging S_Accidents.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dim_Description_Accidents\Staging S_Accidents.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Dim_Description_Accidents.Paths[Desciptions Nuevas]"
+              endId="Package\Dim_Description_Accidents\Cantidad de Registros Nuevos.Inputs[Row Count Input 1]"
+              name="Desciptions Nuevas"
+              startId="Package\Dim_Description_Accidents\Description Nuevas o Modificadas.Outputs[Desciptions Nuevas]" />
+            <path
+              refId="Package\Dim_Description_Accidents.Paths[Descriptions Modificadas]"
+              endId="Package\Dim_Description_Accidents\Cantidad de Registros Modificados.Inputs[Row Count Input 1]"
+              name="Descriptions Modificadas"
+              startId="Package\Dim_Description_Accidents\Description Nuevas o Modificadas.Outputs[Descriptions Modificadas]" />
+            <path
+              refId="Package\Dim_Description_Accidents.Paths[Merge Join Output]"
+              endId="Package\Dim_Description_Accidents\Description Nuevas o Modificadas.Inputs[Conditional Split Input]"
+              name="Merge Join Output"
+              startId="Package\Dim_Description_Accidents\Merge Join.Outputs[Merge Join Output]" />
+            <path
+              refId="Package\Dim_Description_Accidents.Paths[OLE DB Command Output]"
+              endId="Package\Dim_Description_Accidents\Actualizar Registros en Dim_Description_Accidents.Inputs[OLE DB Command Input]"
+              name="OLE DB Command Output"
+              startId="Package\Dim_Description_Accidents\Insertar Registros en Dim_Description_Accidents_Mod.Outputs[OLE DB Command Output]" />
+            <path
+              refId="Package\Dim_Description_Accidents.Paths[OLE DB Source Output]"
+              endId="Package\Dim_Description_Accidents\Stage MD5.Inputs[Entrada 0]"
+              name="OLE DB Source Output"
+              startId="Package\Dim_Description_Accidents\Staging S_Accidents.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Dim_Description_Accidents.Paths[OLE DB Source Output1]"
+              endId="Package\Dim_Description_Accidents\DataMart MD5.Inputs[Entrada 0]"
+              name="OLE DB Source Output"
+              startId="Package\Dim_Description_Accidents\Datamart Dim_Description_Accidents.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Dim_Description_Accidents.Paths[Row Count Output 1]"
+              endId="Package\Dim_Description_Accidents\Destino Dim_Description_Accidents.Inputs[OLE DB Destination Input]"
+              name="Row Count Output 1"
+              startId="Package\Dim_Description_Accidents\Cantidad de Registros Nuevos.Outputs[Row Count Output 1]" />
+            <path
+              refId="Package\Dim_Description_Accidents.Paths[Row Count Output 11]"
+              endId="Package\Dim_Description_Accidents\Insertar Registros en Dim_Description_Accidents_Mod.Inputs[OLE DB Command Input]"
+              name="Row Count Output 1"
+              startId="Package\Dim_Description_Accidents\Cantidad de Registros Modificados.Outputs[Row Count Output 1]" />
+            <path
+              refId="Package\Dim_Description_Accidents.Paths[Salida 0]"
+              endId="Package\Dim_Description_Accidents\Merge Join.Inputs[Merge Join Left Input]"
+              name="Salida 0"
+              startId="Package\Dim_Description_Accidents\Stage MD5.Outputs[Salida 0]" />
+            <path
+              refId="Package\Dim_Description_Accidents.Paths[Salida 01]"
+              endId="Package\Dim_Description_Accidents\Merge Join.Inputs[Merge Join Right Input]"
+              name="Salida 0"
+              startId="Package\Dim_Description_Accidents\DataMart MD5.Outputs[Salida 0]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="206,42"
+          Id="Package\Dim_Description_Accidents"
+          TopLeft="68,60" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Dim_Description_Accidents">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="334,42"
+          Id="Package\Dim_Description_Accidents\Insertar Registros en Dim_Description_Accidents_Mod"
+          TopLeft="351,437" />
+        <NodeLayout
+          Size="240,42"
+          Id="Package\Dim_Description_Accidents\Cantidad de Registros Modificados"
+          TopLeft="397,366" />
+        <NodeLayout
+          Size="174,42"
+          Id="Package\Dim_Description_Accidents\Staging S_Accidents"
+          TopLeft="115,21" />
+        <NodeLayout
+          Size="147,42"
+          Id="Package\Dim_Description_Accidents\DataMart MD5"
+          TopLeft="424,106" />
+        <NodeLayout
+          Size="237,42"
+          Id="Package\Dim_Description_Accidents\Description Nuevas o Modificadas"
+          TopLeft="212,270" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Dim_Description_Accidents\Stage MD5"
+          TopLeft="138,99" />
+        <NodeLayout
+          Size="245,42"
+          Id="Package\Dim_Description_Accidents\Destino Dim_Description_Accidents"
+          TopLeft="29,437" />
+        <NodeLayout
+          Size="253,42"
+          Id="Package\Dim_Description_Accidents\Datamart Dim_Description_Accidents"
+          TopLeft="373,22" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Dim_Description_Accidents\Merge Join"
+          TopLeft="264,186" />
+        <NodeLayout
+          Size="317,42"
+          Id="Package\Dim_Description_Accidents\Actualizar Registros en Dim_Description_Accidents"
+          TopLeft="366,510" />
+        <NodeLayout
+          Size="220,42"
+          Id="Package\Dim_Description_Accidents\Cantidad de Registros Nuevos"
+          TopLeft="41,366" />
+        <EdgeLayout
+          Id="Package\Dim_Description_Accidents.Paths[OLE DB Source Output]"
+          TopLeft="202.5,63">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36"
+              Start="0,0"
+              End="0,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim_Description_Accidents.Paths[OLE DB Command Output]"
+          TopLeft="521.25,479">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31"
+              Start="0,0"
+              End="0,23.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim_Description_Accidents.Paths[Merge Join Output]"
+          TopLeft="329.75,228">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42"
+              Start="0,0"
+              End="0,34.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim_Description_Accidents.Paths[Descriptions Modificadas]"
+          TopLeft="368.666666666667,312">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="148.333333333333,54"
+              Start="0,0"
+              End="148.333333333333,46.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.8172673931266" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.8172673931266"
+                    Point2="0,21.8172673931266"
+                    Point3="4,21.8172673931266" />
+                  <mssgle:LineSegment
+                    End="144.333333333333,21.8172673931266" />
+                  <mssgle:CubicBezierSegment
+                    Point1="144.333333333333,21.8172673931266"
+                    Point2="148.333333333333,21.8172673931266"
+                    Point3="148.333333333333,25.8172673931266" />
+                  <mssgle:LineSegment
+                    End="148.333333333333,46.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="19.4840885416667,26.8172673931266,109.36515625,11.658203125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim_Description_Accidents.Paths[Desciptions Nuevas]"
+          TopLeft="292.333333333333,312">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-141.333333333333,54"
+              Start="0,0"
+              End="-141.333333333333,46.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.8172673931266" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.8172673931266"
+                    Point2="0,21.8172673931266"
+                    Point3="-4,21.8172673931266" />
+                  <mssgle:LineSegment
+                    End="-137.333333333333,21.8172673931266" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-137.333333333333,21.8172673931266"
+                    Point2="-141.333333333333,21.8172673931266"
+                    Point3="-141.333333333333,25.8172673931266" />
+                  <mssgle:LineSegment
+                    End="-141.333333333333,46.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-113.884244791667,26.8172673931266,86.43515625,11.3310546875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim_Description_Accidents.Paths[Salida 01]"
+          TopLeft="497.5,148">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-148.166666666667,38"
+              Start="0,0"
+              End="-148.166666666667,30.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.5227963525836" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.5227963525836"
+                    Point2="0,22.5227963525836"
+                    Point3="-4,22.5227963525836" />
+                  <mssgle:LineSegment
+                    End="-144.166666666667,22.5227963525836" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-144.166666666667,22.5227963525836"
+                    Point2="-148.166666666667,22.5227963525836"
+                    Point3="-148.166666666667,26.5227963525836" />
+                  <mssgle:LineSegment
+                    End="-148.166666666667,30.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim_Description_Accidents.Paths[Salida 0]"
+          TopLeft="203,141">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="105.666666666667,45"
+              Start="0,0"
+              End="105.666666666667,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.6717325227964" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.6717325227964"
+                    Point2="0,26.6717325227964"
+                    Point3="4,26.6717325227964" />
+                  <mssgle:LineSegment
+                    End="101.666666666667,26.6717325227964" />
+                  <mssgle:CubicBezierSegment
+                    Point1="101.666666666667,26.6717325227964"
+                    Point2="105.666666666667,26.6717325227964"
+                    Point3="105.666666666667,30.6717325227964" />
+                  <mssgle:LineSegment
+                    End="105.666666666667,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim_Description_Accidents.Paths[Row Count Output 11]"
+          TopLeft="517.5,408">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29"
+              Start="0,0"
+              End="0,21.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim_Description_Accidents.Paths[Row Count Output 1]"
+          TopLeft="151.25,408">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29"
+              Start="0,0"
+              End="0,21.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim_Description_Accidents.Paths[OLE DB Source Output1]"
+          TopLeft="498.5,64">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42"
+              Start="0,0"
+              End="0,34.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dim_Description_Accidents\Staging S_Accidents">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dim_Description_Accidents\Destino Dim_Description_Accidents">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dim_Description_Accidents\Datamart Dim_Description_Accidents">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

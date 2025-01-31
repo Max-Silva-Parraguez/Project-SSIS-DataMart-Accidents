@@ -1,0 +1,3033 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/5/2025 12:15:03 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MAX"
+  DTS:CreatorName="MAX\MAX"
+  DTS:DTSID="{06927564-DBCE-4E5C-8B7F-1CB35B3D3FE9}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5397.1"
+  DTS:LocaleID="2058"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{D78FF1AA-2825-418C-AA01-39CD999F26F9}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{550478C0-F50A-4F3A-A5F4-43B6F908FBE6}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2058"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="D:\SSIS_Project_Portfolio\pruebita.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Id_Staging"
+              DTS:DTSID="{F9B9C9AD-6D7C-4140-B0CC-8885232C7A72}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ID_order"
+              DTS:DTSID="{939A8B72-332D-4C6E-BB59-14172CF13E57}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Source"
+              DTS:DTSID="{78A1C386-76C0-4E65-9CF3-240F9D807022}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Severity"
+              DTS:DTSID="{1FA2C056-3E60-47D2-BDAD-72625E805217}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="304"
+              DTS:DataScale="7"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Start_Time"
+              DTS:DTSID="{EED45106-2D51-4EA1-AF84-0A454A1AFD88}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="304"
+              DTS:DataScale="7"
+              DTS:TextQualified="True"
+              DTS:ObjectName="End_Time"
+              DTS:DTSID="{2B730E31-93DE-4B61-9362-98A947B04284}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Start_Lat"
+              DTS:DTSID="{5A283C34-E14D-4B8C-AEFA-16EB60498833}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Start_Lng"
+              DTS:DTSID="{467F2639-F66F-450F-8352-E38B3400FA4B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="End_Lat"
+              DTS:DTSID="{A4E36F2D-3741-4CA4-9C89-DDE3968138A8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="End_Lng"
+              DTS:DTSID="{A69EBC07-86A3-4FD8-B202-F12CE7BF3230}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Distance_mi"
+              DTS:DTSID="{632F6DB5-3B5A-4DDD-9370-D6D4C2FD4FCF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="800"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Description"
+              DTS:DTSID="{EDB0AFE5-3EA3-4347-9B45-1E739F9EE2BC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Street"
+              DTS:DTSID="{E4E4C703-9E2D-4ECA-8FCC-F60EC798D1DD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="City"
+              DTS:DTSID="{9B020752-77DA-447A-BE3C-08A627AE4990}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="County"
+              DTS:DTSID="{C25E866E-EA2D-4267-B7A0-F651197BB890}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="State"
+              DTS:DTSID="{79AB3320-5D88-4B1C-B81A-F8E0DC522662}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Zipcode"
+              DTS:DTSID="{F97F11E4-B8D4-4275-BE11-037558C2193F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Country"
+              DTS:DTSID="{33D624FC-CCAF-40CD-B5F9-4049F74CAC59}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Timezone"
+              DTS:DTSID="{9486CBE0-C79A-4407-9E59-EAD27BF46D83}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Airport_Code"
+              DTS:DTSID="{AD822E5F-2DC3-497B-9D5A-C443FA72C1BF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="304"
+              DTS:DataScale="7"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Weather_Timestamp"
+              DTS:DTSID="{61D82058-F636-4819-A52B-76CD7B381870}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Temperature_F"
+              DTS:DTSID="{F7A0530F-1293-44AD-AF28-93276B72EDBF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Wind_Chill_F"
+              DTS:DTSID="{29BAE806-CB40-456C-B634-1F7199762AC3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Humidity"
+              DTS:DTSID="{7303ABFC-2EDD-44EC-BD12-E7F8784CA22C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Pressure_in"
+              DTS:DTSID="{82C0610D-6BDA-4A0E-894A-E6573AA6365D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Visibility_mi"
+              DTS:DTSID="{32CC88B8-9E69-47E9-A296-AC3D8CD508EA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Wind_Direction"
+              DTS:DTSID="{DD69F80B-4BC2-4CC2-9D34-9AFEF7ECDBE0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Wind_Speed_mph"
+              DTS:DTSID="{EC7282B3-A036-4599-9C0B-33D9A7EFB1C5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Precipitation_in"
+              DTS:DTSID="{859DD1E2-4ACB-48BB-9394-63B54BAA7226}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Weather_Condition"
+              DTS:DTSID="{556EA2EC-0622-4A9D-9276-10C36C63849E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Amenity"
+              DTS:DTSID="{D85FD21B-8747-4C8C-AB89-A2EAE993B4E8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Bump"
+              DTS:DTSID="{30690100-30A3-4106-9466-E8EC69CC0515}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Crossing"
+              DTS:DTSID="{941DADA6-8DAC-4EF1-A5F4-B9029FA209E5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Give_Way"
+              DTS:DTSID="{CF86983B-19F6-4418-8E9C-BFD720FE9E72}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Junction"
+              DTS:DTSID="{D85B65B5-CFFA-4005-A7B6-89D909C4F4F7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="No_Exit"
+              DTS:DTSID="{1EAC47CC-5102-4B31-BBCF-1665427ACB1D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Railway"
+              DTS:DTSID="{B3CC0D4D-2B46-4D9F-91A1-95A75815D230}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Roundabout"
+              DTS:DTSID="{211B26E2-1463-4B0F-8F51-F5F4EB084B9B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Station"
+              DTS:DTSID="{7AA12656-E2D8-4E7A-80FD-ACAD7FFD3744}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Stop"
+              DTS:DTSID="{15B6E322-BC87-4CB4-8427-46019E4DB019}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Traffic_Calming"
+              DTS:DTSID="{07D48205-A9B9-4ACE-BD28-6F8E696CBCE0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Traffic_Signal"
+              DTS:DTSID="{705789AA-E725-4420-A039-19D7252476B1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Turning_Loop"
+              DTS:DTSID="{28E6A76A-F748-450C-A964-16211C2F6852}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Sunrise_Sunset"
+              DTS:DTSID="{C4B89430-7E83-440C-B7C0-D1F4716DA993}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Civil_Twilight"
+              DTS:DTSID="{B9AF3CB7-C5AC-45C6-AE11-41B2F6D722F7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Nautical_Twilight"
+              DTS:DTSID="{36F7FDE4-5118-4138-ACCA-A1380C175253}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Astronomical_Twilight"
+              DTS:DTSID="{1C414805-5BB9-40F8-BBE3-EA713639A660}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Start_Time_C"
+              DTS:DTSID="{43A32AFF-5CB3-4DC7-84C3-DB58D6AD8F46}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="End_Time_C"
+              DTS:DTSID="{0887FACA-3E93-423C-8BDA-D4A46D6C26B6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Weather_Timestamp_C"
+              DTS:DTSID="{CEE19A99-A1A2-4DF0-856D-0A2828EDC73C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Start_Time_Date"
+              DTS:DTSID="{4D066100-71D7-4C5B-9577-72F656AA1EBB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="8"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Start_Time_Hour"
+              DTS:DTSID="{DCCE4219-F52F-4992-9E55-EBB04F1AAEB9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="End_Time_Date"
+              DTS:DTSID="{08599F5C-5E40-4FFC-85B6-5634AE05CEC8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="8"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="End_Time_Hour"
+              DTS:DTSID="{CAD17519-7C7F-48F6-B2FC-9ACA8E7496C8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Weather_Timestamp_Date"
+              DTS:DTSID="{10B376F0-09DB-4273-AF3A-603AA77FBCAD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="8"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Weather_Timestamp_Hour"
+              DTS:DTSID="{BA34DF3A-7D56-470A-A855-A1362910C1A4}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[MAX\MSSQLSERVER2022.LOAD_ACCIDENTS.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{303AE73A-CD91-4D13-9D7C-36861113CEF1}"
+      DTS:ObjectName="MAX\MSSQLSERVER2022.LOAD_ACCIDENTS.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=MAX\MSSQLSERVER2022;User ID=sa;Initial Catalog=LOAD_ACCIDENTS;Provider=SQLNCLI11.1;Application Name=SSIS-2  De Load_Accidents a Datamart_Accidents-{303AE73A-CD91-4D13-9D7C-36861113CEF1}MAX\MSSQLSERVER2022.LOAD_ACCIDENTS.sa;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAJ3YNkaA7v0erw9zfXIJgggAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACV+XXzaAkuVZUhpbvX3HQITLeMgTe+ilWvCNjMZC3xSQAAAAAOgAAAAAIAACAAAADNcQtQ4OxwaPZM8MKkWqr4GqxNzLaUZRKXJAAAhRsXiSAAAADyWgpa2YbBrDNCI1UNCWu4oXz+DY8N9ic+l5P5h7Gv7EAAAACtShvCy+hcHPXFwJkvnG5cTAJrsNTyfEv/zRcpE4xre/xvl957C6JinEZgfII5rNSBCTj1rR91YgzZacfAy8qQ</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{07889377-CF53-4004-8B3A-7C0E0896F9E8}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task\Flat File Destination"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="2058"
+              name="Flat File Destination"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Flat File Destination.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Id_Staging]"
+                      cachedDataType="i4"
+                      cachedName="Id_Staging"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Id_Staging]"
+                      lineageId="Package\Data Flow Task\677:invalid" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[ID_order]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ID_order"
+                      cachedSortKeyPosition="2"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ID_order]"
+                      lineageId="Package\Data Flow Task\678:invalid" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Source]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Source"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Source]"
+                      lineageId="Package\Data Flow Task\679:invalid" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Severity]"
+                      cachedDataType="i4"
+                      cachedName="Severity"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Severity]"
+                      lineageId="Package\Data Flow Task\Flat File Destination.Connections[FlatFileConnection]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Start_Time]"
+                      cachedDataType="dbTimeStamp2"
+                      cachedName="Start_Time"
+                      cachedScale="7"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Start_Time]"
+                      lineageId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[End_Time]"
+                      cachedDataType="dbTimeStamp2"
+                      cachedName="End_Time"
+                      cachedScale="7"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[End_Time]"
+                      lineageId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Id_Staging]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Start_Lat]"
+                      cachedDataType="r8"
+                      cachedName="Start_Lat"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Start_Lat]"
+                      lineageId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[ID_order]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Start_Lng]"
+                      cachedDataType="r8"
+                      cachedName="Start_Lng"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Start_Lng]"
+                      lineageId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Source]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[End_Lat]"
+                      cachedDataType="r8"
+                      cachedName="End_Lat"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[End_Lat]"
+                      lineageId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Severity]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[End_Lng]"
+                      cachedDataType="r8"
+                      cachedName="End_Lng"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[End_Lng]"
+                      lineageId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Start_Time]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Distance_mi]"
+                      cachedDataType="r8"
+                      cachedName="Distance_mi"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Distance_mi]"
+                      lineageId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[End_Time]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Description]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="800"
+                      cachedName="Description"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Description]"
+                      lineageId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Start_Lat]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Street]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Street"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Street]"
+                      lineageId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Start_Lng]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[City]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="City"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[City]"
+                      lineageId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[End_Lat]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[County]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="County"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[County]"
+                      lineageId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[End_Lng]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[State]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="State"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[State]"
+                      lineageId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Distance_mi]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Zipcode]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Zipcode"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Zipcode]"
+                      lineageId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Description]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Country]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Country"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Country]"
+                      lineageId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Street]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Timezone]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Timezone"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Timezone]"
+                      lineageId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[City]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Airport_Code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Airport_Code"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Airport_Code]"
+                      lineageId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[County]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Weather_Timestamp]"
+                      cachedDataType="dbTimeStamp2"
+                      cachedName="Weather_Timestamp"
+                      cachedScale="7"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Weather_Timestamp]"
+                      lineageId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[State]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Temperature_F]"
+                      cachedDataType="r8"
+                      cachedName="Temperature_F"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Temperature_F]"
+                      lineageId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Zipcode]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Wind_Chill_F]"
+                      cachedDataType="r8"
+                      cachedName="Wind_Chill_F"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Wind_Chill_F]"
+                      lineageId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Country]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Humidity]"
+                      cachedDataType="r8"
+                      cachedName="Humidity"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Humidity]"
+                      lineageId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Timezone]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Pressure_in]"
+                      cachedDataType="r8"
+                      cachedName="Pressure_in"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Pressure_in]"
+                      lineageId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Airport_Code]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Visibility_mi]"
+                      cachedDataType="r8"
+                      cachedName="Visibility_mi"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Visibility_mi]"
+                      lineageId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Weather_Timestamp]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Wind_Direction]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Wind_Direction"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Wind_Direction]"
+                      lineageId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Temperature_F]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Wind_Speed_mph]"
+                      cachedDataType="r8"
+                      cachedName="Wind_Speed_mph"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Wind_Speed_mph]"
+                      lineageId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Wind_Chill_F]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Precipitation_in]"
+                      cachedDataType="r8"
+                      cachedName="Precipitation_in"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Precipitation_in]"
+                      lineageId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Humidity]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Weather_Condition]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="Weather_Condition"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Weather_Condition]"
+                      lineageId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Pressure_in]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Amenity]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Amenity"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Amenity]"
+                      lineageId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Visibility_mi]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Bump]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Bump"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Bump]"
+                      lineageId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Wind_Direction]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Crossing]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Crossing"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Crossing]"
+                      lineageId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Wind_Speed_mph]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Give_Way]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Give_Way"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Give_Way]"
+                      lineageId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Precipitation_in]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Junction]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Junction"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Junction]"
+                      lineageId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Weather_Condition]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[No_Exit]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="No_Exit"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[No_Exit]"
+                      lineageId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Amenity]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Railway]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Railway"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Railway]"
+                      lineageId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Bump]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Roundabout]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Roundabout"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Roundabout]"
+                      lineageId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Crossing]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Station]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Station"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Station]"
+                      lineageId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Give_Way]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Stop]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Stop"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Stop]"
+                      lineageId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Junction]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Traffic_Calming]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Traffic_Calming"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Traffic_Calming]"
+                      lineageId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[No_Exit]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Traffic_Signal]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Traffic_Signal"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Traffic_Signal]"
+                      lineageId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Railway]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Turning_Loop]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Turning_Loop"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Turning_Loop]"
+                      lineageId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Roundabout]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Sunrise_Sunset]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Sunrise_Sunset"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Sunrise_Sunset]"
+                      lineageId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Station]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Civil_Twilight]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Civil_Twilight"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Civil_Twilight]"
+                      lineageId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Stop]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Nautical_Twilight]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Nautical_Twilight"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Nautical_Twilight]"
+                      lineageId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Traffic_Calming]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Astronomical_Twilight]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Astronomical_Twilight"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Astronomical_Twilight]"
+                      lineageId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Traffic_Signal]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Start_Time_C]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Start_Time_C"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Start_Time_C]"
+                      lineageId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Turning_Loop]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[End_Time_C]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="End_Time_C"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[End_Time_C]"
+                      lineageId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Sunrise_Sunset]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Weather_Timestamp_C]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Weather_Timestamp_C"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Weather_Timestamp_C]"
+                      lineageId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Civil_Twilight]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Start_Time_Date]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="Start_Time_Date"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Start_Time_Date]"
+                      lineageId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Nautical_Twilight]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Start_Time_Hour]"
+                      cachedDataType="wstr"
+                      cachedLength="8"
+                      cachedName="Start_Time_Hour"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Start_Time_Hour]"
+                      lineageId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Astronomical_Twilight]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[End_Time_Date]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="End_Time_Date"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[End_Time_Date]"
+                      lineageId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Start_Time_C]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[End_Time_Hour]"
+                      cachedDataType="wstr"
+                      cachedLength="8"
+                      cachedName="End_Time_Hour"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[End_Time_Hour]"
+                      lineageId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[End_Time_C]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Weather_Timestamp_Date]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="Weather_Timestamp_Date"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Weather_Timestamp_Date]"
+                      lineageId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Weather_Timestamp_C]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Weather_Timestamp_Hour]"
+                      cachedDataType="wstr"
+                      cachedLength="8"
+                      cachedName="Weather_Timestamp_Hour"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Weather_Timestamp_Hour]"
+                      lineageId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Start_Time_Date]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Id_Staging]"
+                      dataType="i4"
+                      name="Id_Staging" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ID_order]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ID_order" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Source]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Source" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Severity]"
+                      dataType="i4"
+                      name="Severity" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Start_Time]"
+                      dataType="dbTimeStamp2"
+                      name="Start_Time"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[End_Time]"
+                      dataType="dbTimeStamp2"
+                      name="End_Time"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Start_Lat]"
+                      dataType="r8"
+                      name="Start_Lat" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Start_Lng]"
+                      dataType="r8"
+                      name="Start_Lng" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[End_Lat]"
+                      dataType="r8"
+                      name="End_Lat" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[End_Lng]"
+                      dataType="r8"
+                      name="End_Lng" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Distance_mi]"
+                      dataType="r8"
+                      name="Distance_mi" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Description]"
+                      codePage="1252"
+                      dataType="str"
+                      length="800"
+                      name="Description" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Street]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Street" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[City]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="City" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[County]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="County" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[State]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="State" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Zipcode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Zipcode" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Country]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Country" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Timezone]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Timezone" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Airport_Code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Airport_Code" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Weather_Timestamp]"
+                      dataType="dbTimeStamp2"
+                      name="Weather_Timestamp"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Temperature_F]"
+                      dataType="r8"
+                      name="Temperature_F" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Wind_Chill_F]"
+                      dataType="r8"
+                      name="Wind_Chill_F" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Humidity]"
+                      dataType="r8"
+                      name="Humidity" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Pressure_in]"
+                      dataType="r8"
+                      name="Pressure_in" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Visibility_mi]"
+                      dataType="r8"
+                      name="Visibility_mi" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Wind_Direction]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Wind_Direction" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Wind_Speed_mph]"
+                      dataType="r8"
+                      name="Wind_Speed_mph" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Precipitation_in]"
+                      dataType="r8"
+                      name="Precipitation_in" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Weather_Condition]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Weather_Condition" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Amenity]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Amenity" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Bump]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Bump" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Crossing]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Crossing" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Give_Way]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Give_Way" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Junction]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Junction" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[No_Exit]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="No_Exit" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Railway]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Railway" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Roundabout]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Roundabout" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Station]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Station" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Stop]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Stop" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Traffic_Calming]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Traffic_Calming" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Traffic_Signal]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Traffic_Signal" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Turning_Loop]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Turning_Loop" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Sunrise_Sunset]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Sunrise_Sunset" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Civil_Twilight]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Civil_Twilight" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Nautical_Twilight]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Nautical_Twilight" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Astronomical_Twilight]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Astronomical_Twilight" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Start_Time_C]"
+                      dataType="wstr"
+                      length="50"
+                      name="Start_Time_C" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[End_Time_C]"
+                      dataType="wstr"
+                      length="50"
+                      name="End_Time_C" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Weather_Timestamp_C]"
+                      dataType="wstr"
+                      length="50"
+                      name="Weather_Timestamp_C" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Start_Time_Date]"
+                      dataType="wstr"
+                      length="10"
+                      name="Start_Time_Date" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Start_Time_Hour]"
+                      dataType="wstr"
+                      length="8"
+                      name="Start_Time_Hour" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[End_Time_Date]"
+                      dataType="wstr"
+                      length="10"
+                      name="End_Time_Date" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[End_Time_Hour]"
+                      dataType="wstr"
+                      length="8"
+                      name="End_Time_Hour" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Weather_Timestamp_Date]"
+                      dataType="wstr"
+                      length="10"
+                      name="Weather_Timestamp_Date" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Weather_Timestamp_Hour]"
+                      dataType="wstr"
+                      length="8"
+                      name="Weather_Timestamp_Hour" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Odenando y Eliminando Duplicados"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Odenando y Eliminando Duplicados"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[Id_Staging]"
+                      cachedDataType="i4"
+                      cachedName="Id_Staging"
+                      lineageId="Package\Data Flow Task\680:invalid">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ID"
+                      lineageId="Package\Data Flow Task\681:invalid">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[Source]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Source"
+                      lineageId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[Severity]"
+                      cachedDataType="i4"
+                      cachedName="Severity"
+                      lineageId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[Id_Staging]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[Start_Time]"
+                      cachedDataType="dbTimeStamp2"
+                      cachedName="Start_Time"
+                      cachedScale="7"
+                      lineageId="Package\Data Flow Task\682:invalid">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[End_Time]"
+                      cachedDataType="dbTimeStamp2"
+                      cachedName="End_Time"
+                      cachedScale="7"
+                      lineageId="Package\Data Flow Task\683:invalid">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[Start_Lat]"
+                      cachedDataType="r8"
+                      cachedName="Start_Lat"
+                      lineageId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[ID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[Start_Lng]"
+                      cachedDataType="r8"
+                      cachedName="Start_Lng"
+                      lineageId="Package\Data Flow Task\684:invalid">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[End_Lat]"
+                      cachedDataType="r8"
+                      cachedName="End_Lat"
+                      lineageId="Package\Data Flow Task\685:invalid">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[End_Lng]"
+                      cachedDataType="r8"
+                      cachedName="End_Lng"
+                      lineageId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[Source]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[Distance_mi]"
+                      cachedDataType="r8"
+                      cachedName="Distance_mi"
+                      lineageId="Package\Data Flow Task\686:invalid">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[Description]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="800"
+                      cachedName="Description"
+                      lineageId="Package\Data Flow Task\687:invalid">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[Street]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Street"
+                      lineageId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[Severity]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[City]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="City"
+                      lineageId="Package\Data Flow Task\688:invalid">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[County]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="County"
+                      lineageId="Package\Data Flow Task\689:invalid">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[State]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="State"
+                      lineageId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[Start_Time]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[Zipcode]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Zipcode"
+                      lineageId="Package\Data Flow Task\690:invalid">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[Country]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Country"
+                      lineageId="Package\Data Flow Task\691:invalid">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[Timezone]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Timezone"
+                      lineageId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[End_Time]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[Airport_Code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Airport_Code"
+                      lineageId="Package\Data Flow Task\692:invalid">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[Weather_Timestamp]"
+                      cachedDataType="dbTimeStamp2"
+                      cachedName="Weather_Timestamp"
+                      cachedScale="7"
+                      lineageId="Package\Data Flow Task\693:invalid">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[Temperature_F]"
+                      cachedDataType="r8"
+                      cachedName="Temperature_F"
+                      lineageId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[Start_Lat]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[Wind_Chill_F]"
+                      cachedDataType="r8"
+                      cachedName="Wind_Chill_F"
+                      lineageId="Package\Data Flow Task\694:invalid">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[Humidity]"
+                      cachedDataType="r8"
+                      cachedName="Humidity"
+                      lineageId="Package\Data Flow Task\695:invalid">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[Pressure_in]"
+                      cachedDataType="r8"
+                      cachedName="Pressure_in"
+                      lineageId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[Start_Lng]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[Visibility_mi]"
+                      cachedDataType="r8"
+                      cachedName="Visibility_mi"
+                      lineageId="Package\Data Flow Task\696:invalid">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[Wind_Direction]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Wind_Direction"
+                      lineageId="Package\Data Flow Task\697:invalid">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[Wind_Speed_mph]"
+                      cachedDataType="r8"
+                      cachedName="Wind_Speed_mph"
+                      lineageId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[End_Lat]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[Precipitation_in]"
+                      cachedDataType="r8"
+                      cachedName="Precipitation_in"
+                      lineageId="Package\Data Flow Task\698:invalid">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[Weather_Condition]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="Weather_Condition"
+                      lineageId="Package\Data Flow Task\699:invalid">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[Amenity]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Amenity"
+                      lineageId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[End_Lng]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[Bump]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Bump"
+                      lineageId="Package\Data Flow Task\700:invalid">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[Crossing]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Crossing"
+                      lineageId="Package\Data Flow Task\701:invalid">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[Give_Way]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Give_Way"
+                      lineageId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[Distance_mi]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[Junction]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Junction"
+                      lineageId="Package\Data Flow Task\702:invalid">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[No_Exit]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="No_Exit"
+                      lineageId="Package\Data Flow Task\703:invalid">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[Railway]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Railway"
+                      lineageId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[Description]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[Roundabout]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Roundabout"
+                      lineageId="Package\Data Flow Task\704:invalid">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[Station]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Station"
+                      lineageId="Package\Data Flow Task\705:invalid">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[Stop]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Stop"
+                      lineageId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[Street]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[Traffic_Calming]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Traffic_Calming"
+                      lineageId="Package\Data Flow Task\706:invalid">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[Traffic_Signal]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Traffic_Signal"
+                      lineageId="Package\Data Flow Task\707:invalid">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[Turning_Loop]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Turning_Loop"
+                      lineageId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[City]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[Sunrise_Sunset]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Sunrise_Sunset"
+                      lineageId="Package\Data Flow Task\708:invalid">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[Civil_Twilight]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Civil_Twilight"
+                      lineageId="Package\Data Flow Task\709:invalid">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[Nautical_Twilight]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Nautical_Twilight"
+                      lineageId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[County]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[Astronomical_Twilight]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Astronomical_Twilight"
+                      lineageId="Package\Data Flow Task\710:invalid">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Id_Staging]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Id_Staging]"
+                      name="Id_Staging"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\680:invalid}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[ID]"
+                      name="ID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\681:invalid}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Source]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Source]"
+                      name="Source">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Severity]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Severity]"
+                      name="Severity">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[Id_Staging]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Start_Time]"
+                      dataType="dbTimeStamp2"
+                      lineageId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Start_Time]"
+                      name="Start_Time"
+                      scale="7">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\682:invalid}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[End_Time]"
+                      dataType="dbTimeStamp2"
+                      lineageId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[End_Time]"
+                      name="End_Time"
+                      scale="7">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\683:invalid}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Start_Lat]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Start_Lat]"
+                      name="Start_Lat">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[ID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Start_Lng]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Start_Lng]"
+                      name="Start_Lng">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\684:invalid}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[End_Lat]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[End_Lat]"
+                      name="End_Lat">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\685:invalid}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[End_Lng]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[End_Lng]"
+                      name="End_Lng">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[Source]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Distance_mi]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Distance_mi]"
+                      name="Distance_mi">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\686:invalid}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Description]"
+                      codePage="1252"
+                      dataType="str"
+                      length="800"
+                      lineageId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Description]"
+                      name="Description">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\687:invalid}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Street]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      lineageId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Street]"
+                      name="Street">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[Severity]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[City]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[City]"
+                      name="City">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\688:invalid}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[County]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[County]"
+                      name="County">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\689:invalid}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[State]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[State]"
+                      name="State">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[Start_Time]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Zipcode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Zipcode]"
+                      name="Zipcode">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\690:invalid}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Country]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Country]"
+                      name="Country">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\691:invalid}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Timezone]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Timezone]"
+                      name="Timezone">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[End_Time]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Airport_Code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Airport_Code]"
+                      name="Airport_Code">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\692:invalid}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Weather_Timestamp]"
+                      dataType="dbTimeStamp2"
+                      lineageId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Weather_Timestamp]"
+                      name="Weather_Timestamp"
+                      scale="7">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\693:invalid}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Temperature_F]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Temperature_F]"
+                      name="Temperature_F">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[Start_Lat]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Wind_Chill_F]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Wind_Chill_F]"
+                      name="Wind_Chill_F">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\694:invalid}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Humidity]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Humidity]"
+                      name="Humidity">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\695:invalid}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Pressure_in]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Pressure_in]"
+                      name="Pressure_in">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[Start_Lng]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Visibility_mi]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Visibility_mi]"
+                      name="Visibility_mi">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\696:invalid}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Wind_Direction]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Wind_Direction]"
+                      name="Wind_Direction">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\697:invalid}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Wind_Speed_mph]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Wind_Speed_mph]"
+                      name="Wind_Speed_mph">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[End_Lat]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Precipitation_in]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Precipitation_in]"
+                      name="Precipitation_in">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\698:invalid}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Weather_Condition]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Weather_Condition]"
+                      name="Weather_Condition">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\699:invalid}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Amenity]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Amenity]"
+                      name="Amenity">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[End_Lng]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Bump]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Bump]"
+                      name="Bump">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\700:invalid}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Crossing]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Crossing]"
+                      name="Crossing">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\701:invalid}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Give_Way]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Give_Way]"
+                      name="Give_Way">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[Distance_mi]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Junction]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Junction]"
+                      name="Junction">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\702:invalid}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[No_Exit]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[No_Exit]"
+                      name="No_Exit">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\703:invalid}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Railway]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Railway]"
+                      name="Railway">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[Description]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Roundabout]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Roundabout]"
+                      name="Roundabout">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\704:invalid}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Station]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Station]"
+                      name="Station">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\705:invalid}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Stop]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Stop]"
+                      name="Stop">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[Street]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Traffic_Calming]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Traffic_Calming]"
+                      name="Traffic_Calming">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\706:invalid}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Traffic_Signal]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Traffic_Signal]"
+                      name="Traffic_Signal">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\707:invalid}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Turning_Loop]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Turning_Loop]"
+                      name="Turning_Loop">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[City]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Sunrise_Sunset]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Sunrise_Sunset]"
+                      name="Sunrise_Sunset">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\708:invalid}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Civil_Twilight]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Civil_Twilight]"
+                      name="Civil_Twilight">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\709:invalid}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Nautical_Twilight]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Nautical_Twilight]"
+                      name="Nautical_Twilight">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\Odenando y Eliminando Duplicados.Inputs[Sort Input].Columns[County]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Astronomical_Twilight]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Data Flow Task\Odenando y Eliminando Duplicados.Outputs[Sort Output].Columns[Astronomical_Twilight]"
+                      name="Astronomical_Twilight">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\710:invalid}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Unir con State_Reference"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Unir con State_Reference"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[STATE_REFERENCE]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[STATE_REFERENCE]) [refTable]
+where [refTable].[State_Abbreviation] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="State_Abbreviation" dataType="DT_STR" length="2" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="State_Name" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Data Flow Task\711:invalid};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Unir con State_Reference.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[MAX\MSSQLSERVER2022.LOAD_ACCIDENTS.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[MAX\MSSQLSERVER2022.LOAD_ACCIDENTS.sa]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Unir con State_Reference.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Unir con State_Reference.Inputs[Lookup Input].Columns[State_Name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="State"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Data Flow Task\711:invalid"
+                      name="State_Name"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">State_Abbreviation</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">State_Name</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Unir con State_Reference.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="IgnoreFailure"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Data Flow Task\Unir con State_Reference.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Unir con State_Reference.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Data Flow Task\Unir con State_Reference.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Unir con State_Reference.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Data Flow Task\Unir con State_Reference.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Unir con State_Reference.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Unir con State_Reference.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Unir con State_Reference.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Unir con State_Reference.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Data Flow Task"
+          TopLeft="122,35" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="172,42"
+          Id="Package\Data Flow Task\Flat File Destination"
+          TopLeft="60,60" />
+        <NodeLayout
+          Size="199,42"
+          Id="Package\Data Flow Task\Unir con State_Reference"
+          TopLeft="542,64" />
+        <NodeLayout
+          Size="245,42"
+          Id="Package\Data Flow Task\Odenando y Eliminando Duplicados"
+          TopLeft="60,166" />
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
