@@ -92,6 +92,34 @@ The email was sent using **Script Task** in SSIS. For a production environment, 
 
 ---
 
+## **Project Requirements**
+
+- **SQL Server** with **SQL Server Integration Services (SSIS)** installed.
+- **Visual Studio** with the SSIS tools package.
+- **CSV accident dataset** downloaded from Kaggle.
+
+---
+
+## **How to Run the Project**
+
+1. Download the CSV file from Kaggle.
+2. Load the data into SQL Server using SSIS.
+3. Execute the SSIS package to clean and transform the data.
+4. Implement the DataMart with dimensions and fact table.
+5. Configure the sending of an email confirming the successful completion of the ETL.
+
+---
+
+## **Conclusion**
+
+This project demonstrates how to build an **optimized DataMart** from raw CSV data using **SSIS and SQL Server**, ensuring clean, structured, and efficient data for analyzing traffic accidents in the U.S.
+
+---
+
 ### 📌 Notes:
 The complete and detailed project process can be found in the PDF: SSIS - DataMart Accidents EEUU.pdf
+
+---
+
+**Author:** Eng. Máximo Silva Parraguez
 
