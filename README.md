@@ -1,6 +1,6 @@
-# CREATING A TRAFFIC ACCIDENT DATAMART IN THE USA (2016 - 2023)
+# 🚀 CREATING A TRAFFIC ACCIDENT DATAMART IN THE USA (2016 - 2023)
 
-## I. UNDERSTANDING THE DATA AND THE PROJECT
+## 📌 I. UNDERSTANDING THE DATA AND THE PROJECT
 
 The data was obtained from car accident records throughout the USA, covering 49 states. The data covers from February 2016 to March 2023. It is in a `.csv` file with approximately 7.7 million accident records.
 
@@ -16,7 +16,7 @@ The process that was carried out was:
 ![Image](https://github.com/user-attachments/assets/ac8737b2-56ce-446d-af63-44520bf6633d)
 ---
 
-## II. FIRST: FROM CSV TO LOAD_ACCIDENTS
+## 📌 II. FIRST: FROM CSV TO LOAD_ACCIDENTS
 
 The .csv in question contains 46 columns, each of which is detailed below:
 
@@ -32,7 +32,7 @@ Since the `.csv` file is **3GB** in size and contains **7.7 million records**, i
 ![Image](https://github.com/user-attachments/assets/4c4ea1ed-3c26-4b07-90e8-3fe89ad51832)
 ---
 
-## III. SECOND: FROM LOAD_ACCIDENTS to STAGING_ACCIDENTS (Data Cleansing)
+## 📌 III. SECOND: FROM LOAD_ACCIDENTS to STAGING_ACCIDENTS (Data Cleansing)
 
 In this stage, duplicates are eliminated, data is normalized, and errors are corrected using the following processes in SSIS:
 
@@ -47,7 +47,7 @@ After cleaning, the data is stored in the `STAGING_ACCIDENTS` database, within t
 
 ---
 
-## IV. THIRD: FROM STAGING_ACCIDENTS TO DATAMART_ACCIDENTS
+## 📌 IV. THIRD: FROM STAGING_ACCIDENTS TO DATAMART_ACCIDENTS
 
 The **Datamart** is organized under a **star schema**. The `DATAMART_ACCIDENTS` database is created along with its dimensions and fact table. In addition, intermediate tables are used in `STAGING_ACCIDENTS` to store modified records.
 
@@ -92,7 +92,7 @@ The email was sent using **Script Task** in SSIS. For a production environment, 
 
 ---
 
-## **Project Requirements**
+## 📥 **Project Requirements**
 
 - **SQL Server** with **SQL Server Integration Services (SSIS)** installed.
 - **Visual Studio** with the SSIS tools package.
@@ -100,7 +100,7 @@ The email was sent using **Script Task** in SSIS. For a production environment, 
 
 ---
 
-## **How to Run the Project**
+## 🚀 **How to Run the Project**
 
 1. Download the CSV file from Kaggle.
 2. Load the data into SQL Server using SSIS.
@@ -110,7 +110,7 @@ The email was sent using **Script Task** in SSIS. For a production environment, 
 
 ---
 
-## **Conclusion**
+## 📊 **Conclusion**
 
 This project demonstrates how to build an **optimized DataMart** from raw CSV data using **SSIS and SQL Server**, ensuring clean, structured, and efficient data for analyzing traffic accidents in the U.S.
 
