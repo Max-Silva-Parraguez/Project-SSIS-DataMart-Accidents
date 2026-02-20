@@ -16,8 +16,6 @@ The process that was carried out was:
 ![Image](https://github.com/user-attachments/assets/ac8737b2-56ce-446d-af63-44520bf6633d)
 ---
 
-![Image Data](https://github.com/user-attachments/assets/f7e3b108-4876-4fa3-bd14-db1d36b93b7a)
-
 ## 📌 II. FIRST: FROM CSV TO LOAD_ACCIDENTS
 
 The .csv in question contains 46 columns, each of which is detailed below:
