@@ -16,7 +16,7 @@ The process that was carried out was:
 ![Image](https://github.com/user-attachments/assets/ac8737b2-56ce-446d-af63-44520bf6633d)
 ---
 
-![Image](![Presentación1](https://github.com/user-attachments/assets/d16ec18f-be20-4640-8888-4feb07bb2f74))
+![Image](https://github.com/user-attachments/assets/d16ec18f-be20-4640-8888-4feb07bb2f74)
 
 ## 📌 II. FIRST: FROM CSV TO LOAD_ACCIDENTS
 
