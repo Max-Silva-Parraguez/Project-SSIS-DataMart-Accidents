@@ -16,7 +16,7 @@ The process that was carried out was:
 ![Image](https://github.com/user-attachments/assets/ac8737b2-56ce-446d-af63-44520bf6633d)
 ---
 
-![Image alt]https://github.com/Max-Silva-Parraguez/Project-SSIS-DataMart-Accidents/blob/4b7d7093ac45a70456e2d255484327a34d17fc71/Presentaci%C3%B3n1.jpg
+![Image_alt]https://github.com/Max-Silva-Parraguez/Project-SSIS-DataMart-Accidents/blob/4b7d7093ac45a70456e2d255484327a34d17fc71/Presentaci%C3%B3n1.jpg
 
 ## 📌 II. FIRST: FROM CSV TO LOAD_ACCIDENTS
 
